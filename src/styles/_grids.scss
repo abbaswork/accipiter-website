@@ -1,0 +1,35 @@
+@mixin page-grid {
+
+    //mobile grid
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 72px);
+    margin: 0 auto;
+    gap: 32px;
+    width: 100vw;
+
+    //small desktop grid
+    @media ((min-width: 1024px) and (max-width: 1439px)) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 72px);
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    //standard desktop grid
+    @media (min-width: 1440px) {
+        display: grid;
+        grid-template-columns: repeat(12, 72px);
+        gap: 32px;
+        max-width: 1440px;
+    }
+}
+
+@mixin component-grid {
+
+    grid-column: 1 / -1;
+
+    @media (min-width: 1440px) {
+        grid-column: span 10;
+    }
+}

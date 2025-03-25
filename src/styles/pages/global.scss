@@ -1,0 +1,13 @@
+@use './../grids.scss' as *;
+@use './../typography.scss' as *;
+
+.page {
+
+    //setup grid on page
+    @include page-grid();
+
+}
+
+#storybook-root {
+    padding: 0 !important;
+}
