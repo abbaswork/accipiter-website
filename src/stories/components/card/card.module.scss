@@ -5,10 +5,10 @@
    @include component-grid();
    font-family: sans-serif;
    display: grid;
-   padding: 2em;
+   padding: 2rem;
    flex-direction: column;
    grid-column: span 4;
-   height: 9em;
+   height: 9rem;
    color: white;
    background: 
       url(./cardPattern.svg) center / cover no-repeat,
@@ -16,8 +16,8 @@
       linear-gradient(to right, #C2581B, #AA5467) border-box;
    border: 2px solid transparent;
    border-radius: 20px;
-   gap: 1em;
-   width: 18em;
+   gap: 1rem;
+   width: 18rem;
 
    .cardContainer {
       max-width: 60%;
