@@ -1,0 +1,26 @@
+@use './../../../styles/grids.scss' as *;
+@use './../../../styles/typography.scss' as *;
+
+.cardTemplate {
+   @include component-grid();
+   font-family: sans-serif;
+   display: grid;
+   padding: 2em;
+   flex-direction: column;
+   grid-column: span 4;
+   height: 9em;
+   color: white;
+   background: 
+      url(./cardPattern.svg) center / cover no-repeat,
+      linear-gradient(#12171D, #12171D) padding-box,
+      linear-gradient(to right, #C2581B, #AA5467) border-box;
+   border: 2px solid transparent;
+   border-radius: 20px;
+   gap: 1em;
+   width: 18em;
+
+   .cardContainer {
+      max-width: 60%;
+   }
+}
+
