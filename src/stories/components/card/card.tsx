@@ -1,29 +1,45 @@
-import React from 'react';
-import styles  from './card.module.scss';
+import React, { useState } from 'react';
+import styles from './card.module.scss';
 
 //creating Props for Card
 export interface CardProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  onClick?: () => void;
+  headerText: string;
+  subHeaderText: string;
+  cardType: 'Syrian Foundation' | 'Metric Gamer';
 }
 
 /** Primary UI component for user interaction */
-export const Card = ({}: CardProps) => {
+export const Card = ({ cardType, headerText, subHeaderText }: CardProps) => {
+  let cardClass = styles.metricGamerTemplate;
+
+
+
+  if (cardType === 'Syrian Foundation') {
+    cardClass = styles.syrianFoundationTemplate;
+  }
+
+  if (cardType == 'Metric Gamer') {
+    cardClass = styles.metricGamerTemplate;
+  }
 
   return (
     <>
-    <div className={styles.cardTemplate}>
-      <div className={styles.cardContainer}>
+      <div className={`${styles.cardTemplate} ${cardClass}`}>
+        <div className={styles.cardContainer}>
 
-  
-      <h2>
-        Metric Gamer
-      </h2>
-      <a>
-        Increasing SEO through AI automation
-      </a>
+          <div className={styles.cardHeader}>
+            <h2>
+              {headerText}
+            </h2>
+          </div>
+          <div className={styles.cardSubHeader}>
+            <a>
+              {subHeaderText}
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-    
+
     </>
   );
 };
