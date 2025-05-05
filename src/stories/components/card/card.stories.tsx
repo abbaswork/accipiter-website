@@ -25,4 +25,9 @@ const Template = (args: JSX.IntrinsicAttributes & CardProps) => (
 
 export const Primary: Story = {
   render: Template, // Use the Template for rendering
+  args: {
+    headerText: 'default header',
+    subHeaderText: 'default sub header',
+    cardType: 'Metric Gamer',
+  },
 };
