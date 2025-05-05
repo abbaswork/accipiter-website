@@ -24,5 +24,11 @@ const Template = (args: JSX.IntrinsicAttributes & ButtonProps) => (
 
 export const Primary: Story = {
   render: Template, // Use the Template for rendering
-
+  args: {
+    gradientText: 'Sample Gradient',
+    heroText: 'Sample Hero',
+    subText: 'Sample Subtext',
+    centerCard: false,
+    authorText: 'Sample Author Text',
+  },
 };
