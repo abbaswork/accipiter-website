@@ -14,7 +14,7 @@
    height: 16rem;
    border-radius: 1rem;
    margin: 2rem auto;
-   padding: 1rem;
+   padding: 1.56rem 6.25rem 4rem 3.125rem;
    box-sizing: border-box;
    background: 
       url(./background.svg) center / cover no-repeat,
@@ -30,15 +30,14 @@
    align-items: center;
    justify-content: center;
    display:flex;
+   margin: 0.5rem 50rem 0.5rem 0.5rem;
    display: inline-block;
+   
  }
+
  
- .progress-ring-text {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
+ .progressRingText {
+   font-size: 16px;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -49,11 +48,6 @@
 
  }
  
- .progress-ring-percentage {
-   font-size: 36px;
-   font-weight: bold;
-   line-height: 1;
- }
  
  .progress-ring-label {
    font-size: 16px;
@@ -66,20 +60,42 @@
       linear-gradient(to right, var(--start-color), var(--end-color));
    border: 2px solid transparent;
    color: linear-gradient(to right, #ffffff, #c06620);
-   grid-column: 8 / span 4;
+   height: 30px;
    grid-row: 1;
    font-size: 1.5rem;
    border-radius: 20px;
    max-height: 2rem;
    background: 
    linear-gradient(#12171D, #12171D) padding-box,
-   linear-gradient(-45deg, #C66831, #feb47b, yellow, red);
+   linear-gradient(-45deg, #f8772d, #ffbc88, #C66831, #feb47b);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   gap: 1rem;
+   width: 24rem;
 }
-.cardInteractiveBody {
-   grid-row: 2;
+.cardInteractiveHeaderTab {
+   margin: auto;
+   cursor:pointer;
 }
+.cardInteractiveHeaderTabs {
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 100%;
+   margin-left: 0.5rem;
+   margin-right: 0.5rem;
+   font-size: 12px;
+   background: linear-gradient(-45deg, #C2581B,#E7B772, #C2581B, #994B5C, #C2581B, #E18043);
+   background-size: 400% 400%;
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: gradient 10s ease infinite;
+}
+
 .gradientText {
    background: linear-gradient(to right, #ff7e5f, #feb47b);
    background-clip: text;
@@ -87,13 +103,32 @@
    -webkit-text-fill-color: transparent;
  }
 .cardInteractiveBody {
+   margin: 0.5rem;
    color: white;
-   grid-column: 8 / span 4;
-   grid-row: 2 / span 1;
+   display: flex;
+   font-size: 16px;
 }
-
-.progress-ring-percentage {
+.cardInteractiveContainer {
+   grid-column: 4 / span 4;
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   gap: 1rem;
+   margin: 0rem 2rem 1rem 2rem;
+   width: 100%;
+   height: 100%;
+   border-radius: 20px;
+}
+.progressRingContainer { 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.progressRingPercentage {
    color: white;
+   z-index: 1;
+   font-size: 50px;
 }
 
  @keyframes gradient {
