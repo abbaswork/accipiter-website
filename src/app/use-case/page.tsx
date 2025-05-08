@@ -2,7 +2,7 @@ import Image from "next/image";
 import "./../../styles/pages/use-case.scss";
 import "./../../styles/_typography.scss";
 
-export default function Home() {
+ export default function Home() {
   return (
     <div className="use-case-page">
       <head>
@@ -96,3 +96,4 @@ export default function Home() {
     </div>
   );
 }
+
