@@ -1,10 +1,6 @@
 @use './../../../styles/grids.scss' as *;
 @use './../../../styles/typography.scss' as *;
 
-.hero {
-   @include component-grid();
-}
-
 .cardReviewTemplate {
 //I want the card to be 4 grid-columns wide
    @include component-grid();
@@ -56,4 +52,8 @@ text-align: center;
       linear-gradient(to bottom right, #F6CA56, #C2581B) border-box;
       background-size: 50%;
       height: 18rem;
+ }
+ .authorText {
+   color: gray;
+    margin-top: 5px;
  }
