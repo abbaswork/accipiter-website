@@ -12,8 +12,6 @@ export interface CardProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
 export const Card = ({ cardType, headerText, subHeaderText }: CardProps) => {
   let cardClass = styles.metricGamerTemplate;
 
-
-
   if (cardType === 'Syrian Foundation') {
     cardClass = styles.syrianFoundationTemplate;
   }
