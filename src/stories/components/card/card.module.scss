@@ -35,3 +35,12 @@
    linear-gradient(#12171D, #12171D) padding-box,
    linear-gradient(to right, #C2581B, #AA5467) border-box;
 }
+
+.cardHeader {
+   margin: 1.75rem 1.75rem;
+}
+.cardSubHeader {
+   line-height: 24px;
+   margin: 1.75rem 1.75rem;
+   font-size: 1.1rem;  
+}
