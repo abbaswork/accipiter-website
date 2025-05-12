@@ -1,0 +1,39 @@
+@use './../../../styles/grids.scss' as *;
+@use './../../../styles/typography.scss' as *;
+
+.footerContainer {
+   background-color: black;
+   color: white;
+   display: flex;
+   width:100vw;
+   height: 8rem;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: auto;
+   margin-bottom: auto;
+}
+.footerSocials {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(2, 1fr)
+}
+.footerAccipterText {
+   grid-row: 1;
+   grid-column: 1 /  span 3;
+   text-decoration: none;
+   color: white;
+}
+.footerAccipterSocials {
+   grid-row: 2;
+   grid-column: 1 / span 3;
+}
+.footerContactsContainer {
+   display: flex;
+   min-width: 420px;
+   justify-content: space-between;
+   align-items: center;
+}
+.footerContacts {
+   color: white;
+   text-decoration: none;
+}
