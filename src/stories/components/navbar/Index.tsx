@@ -15,7 +15,7 @@ export type LinkType = {
   url: string;
 };
 
-let links = [
+let links: LinkType[] = [
   { label: 'About', url: '/about.com', },
   { label: 'About', url: '/about.com' },
   { label: 'About', url: '/about.com' },
