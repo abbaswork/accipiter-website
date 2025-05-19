@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import  "./styles.scss";
-// import styles from './style.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -39,15 +38,15 @@ export const Navbar = () => {
   return (
 
     <div className={"navbar"}>
-      <div className={"navbarContainer"}>
+      <div className={"navbar-container "}>
         <NavbarLogo />
-        <div className={`navbarItems ${onOrOffClass}`}>
+        <div className={`navbar-items ${onOrOffClass}`}>
           {links?.map((item, index) => (
-            <Link key={index} href={item.url} className={"navbarItem"}>
+            <Link key={index} href={item.url} className={"navbar-item"}>
               {item.label}
             </Link>
           ))}
-          <Link className={`mobile-demo navbarItem`} key={links.length + 1} href={"/consultation"}>
+          <Link className={`mobile-demo navbar-item`} key={links.length + 1} href={"/consultation"}>
             {"Consultation"}
           </Link>
         </div>
@@ -56,7 +55,7 @@ export const Navbar = () => {
           setOnOrOff={setOnOrOff}
           onOrOffClass={onOrOffClass}
         />
-        <div className={`${"consultationButton"}`}>
+        <div className={`${"consultation-button "}`}>
           <Link href="/consultation" className={"consultationText"}>
             Book a Consultation
           </Link>
@@ -72,17 +71,16 @@ export const NavbarLogo = () => {
     <div>
       <Link href="/" className={"navbarLogo"}>
         Accipter Tech</Link>
-
     </div>
   );
 }
 
 export const HamburgerMenu = ({ onOrOff, setOnOrOff, onOrOffClass }: HamburgerProps) => {
   return (
-    <div className={"hamburgerContainer"}>
-      <div className={"navbarHamburger"} onClick={(e) => setOnOrOff(!onOrOff)}>
+    <div className={"hamburger-container"}>
+      <div className={"navbar-hamburger"} onClick={(e) => setOnOrOff(!onOrOff)}>
         <Image
-          className={"navbarHamburger"}
+          className={"navbar-hamburger"}
           src="/hamburger.svg"
           alt="Hamburger Menu"
           width={50}
