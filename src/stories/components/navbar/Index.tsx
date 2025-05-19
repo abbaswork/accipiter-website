@@ -7,7 +7,6 @@ import Image from 'next/image';
 export interface HamburgerProps {
   onOrOff: boolean;
   setOnOrOff: (onOrOff: boolean) => void;
-  onOrOffClass: string;
 }
 
 export type LinkType = {
@@ -53,7 +52,6 @@ export const Navbar = () => {
         <HamburgerMenu
           onOrOff={onOrOff}
           setOnOrOff={setOnOrOff}
-          onOrOffClass={onOrOffClass}
         />
         <div className={`${"consultation-button "}`}>
           <Link href="/consultation" className={"consultationText"}>
@@ -75,7 +73,7 @@ export const NavbarLogo = () => {
   );
 }
 
-export const HamburgerMenu = ({ onOrOff, setOnOrOff, onOrOffClass }: HamburgerProps) => {
+export const HamburgerMenu = ({ onOrOff, setOnOrOff }: HamburgerProps) => {
   return (
     <div className={"hamburger-container"}>
       <div className={"navbar-hamburger"} onClick={(e) => setOnOrOff(!onOrOff)}>
