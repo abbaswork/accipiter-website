@@ -14,13 +14,13 @@
    z-index: 1000; // Ensure it appears above other elements
 }
 
-.navbarContainer {
+.navbar-container {
    display: flex;
    width: 100%;
    justify-content: space-between;
 }
 
-.navbarCenter {
+.navbar-center {
    position: sticky;
    max-height: 40px;
    font-size: 1.05rem;
@@ -29,7 +29,7 @@
    align-items: center;
 }
 
-.navbarLogo {
+.navbar-logo {
    font-size: 1.5rem;
    min-width: 200px; // optional minimum width
    max-width: 100%; // prevent overflow
@@ -38,7 +38,7 @@
    color: white;
 }
 
-.navbarItem {
+.navbar-item {
    color: white;
    width: 100%;
    text-decoration: none;
@@ -47,7 +47,7 @@
    border: 2px solid transparent;
 }
 
-.navbarItem:hover {
+.navbar-item:hover {
    color: orange;
    text-decoration: none;
    background:
@@ -56,7 +56,7 @@
    border-radius: 0.5rem;
 }
 
-.navbarItems {
+.navbar-items {
    //layout
    width: 100%;
    position: absolute;
@@ -88,7 +88,7 @@
    }
 }
 
-.hamburgerContainer {
+.hamburger-container {
    margin-right: 0.5rem;
    max-height: 40px;
    display: flex;
@@ -109,7 +109,7 @@
    right: 10;
 }
 
-.navbarHamburger {
+.navbar-hamburger {
    display: block;
    width: 1.5rem;
    height: 1.5rem;
@@ -126,7 +126,7 @@
    display: flex;
 }
 
-.consultationButton {
+.consultation-button {
    display: none;
    color: yellow;
 }
@@ -140,7 +140,7 @@
       max-width: 100%;
    }
 
-   .navbarContainer {
+   .navbar-container {
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -150,7 +150,7 @@
       margin: 0 1rem;
    }
 
-   .navbarCenter {
+   .navbar-center {
       position: sticky;
       display: flex;
       max-height: 40px;
@@ -170,7 +170,7 @@
       box-sizing: border-box;
    }
 
-   .navbarItems {
+   .navbar-items {
       width: auto;
       position: unset;
       display: flex;
@@ -182,17 +182,17 @@
       padding: 0.5rem 1rem;
    }
 
-   .navbarItem {
+   .navbar-item {
       width: auto;
       text-align: center;
       display: flex;
    }
 
-   .hamburgerContainer {
+   .hamburger-container {
       display: none;
    }
 
-   .consultationButton {
+   .consultation-button {
       display: flex;
       min-width: 140px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -205,7 +205,7 @@
       padding: 0.75rem 0.75rem;
    }
 
-   .consultationText:hover {
+   .consultation-text:hover {
       color: orange;
       text-decoration: none;
       background:
@@ -215,7 +215,7 @@
    }
 }
 
-.consultationText {
+.consultation-text {
    color: white;
    text-decoration: none;
 }
