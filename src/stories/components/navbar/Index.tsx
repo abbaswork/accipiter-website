@@ -24,14 +24,14 @@ let links: LinkType[] = [
 
 
 export const Navbar = () => {
-  const [onOrOff, setOnOrOff] = React.useState(false);
+  const [mobileDisplay, setMobileDisplay] = React.useState(false);
 
-  //State to track the visibility of the navbar
-  let onOrOffClass = "hidden";
-  if (onOrOff) {
-    onOrOffClass = "visible";
+  //State to track the visibility of the navbar on mobile only
+  let mobileDisplayClass = "mobile-hide";
+  if (mobileDisplay) {
+    mobileDisplayClass = "mobile-display";
   } else {
-    onOrOffClass = "hidden";
+    mobileDisplayClass = "mobile-hide";
   }
 
   return (
@@ -39,7 +39,7 @@ export const Navbar = () => {
     <div className={"navbar"}>
       <div className={"navbar-container "}>
         <NavbarLogo />
-        <div className={`navbar-items ${onOrOffClass}`}>
+        <div className={`navbar-items ${mobileDisplayClass}`}>
           {links?.map((item, index) => (
             <Link key={index} href={item.url} className={"navbar-item"}>
               {item.label}
@@ -50,11 +50,11 @@ export const Navbar = () => {
           </Link>
         </div>
         <HamburgerMenu
-          onOrOff={onOrOff}
-          setOnOrOff={setOnOrOff}
+          onOrOff={mobileDisplay}
+          setOnOrOff={setMobileDisplay}
         />
-        <div className={`${"consultation-button "}`}>
-          <Link href="/consultation" className={"consultationText"}>
+        <div className="consultation-button">
+          <Link href="/consultation" className={"consultation-text"}>
             Book a Consultation
           </Link>
         </div>
