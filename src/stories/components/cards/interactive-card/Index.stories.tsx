@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { ReactiveCard, ReactiveCardProps, ProgressRingProps } from "./Index"; // Make sure this path is correct
-import "./../../../styles/pages/global.scss";
+import "@/styles/pages/global.scss";
 import { JSX } from "react";
 
 const meta = {
-  title: "Components/Card/ReactiveCard",
+  title: "Components/Cards/ReactiveCard",
   component: ReactiveCard,
   parameters: {
     layout: "centered",
