@@ -3,51 +3,29 @@ import styles  from './style.module.scss';
 import { ProgressRing } from './ProgressRing';
 
 export interface ReactiveCardProps {
-  bodyText: [string, string, string];
-  seoText: [string, string, string];
+  headerTabs: string[];
+  bodyText: string[];
+  seoText: string[];
+  progressIntervals: number[];
 }
+
 export interface ProgressRingProps {
   progress?: number;
   setProgress?: (progress: number) => void;
 }
 
-let progressInterval = 1;
+export const ReactiveCard = ({ bodyText, seoText, headerTabs, progressIntervals }: ReactiveCardProps) => {
+  const [progress, setProgress] = React.useState(0); // Track progress animation
+  const [activeIndex, setActiveIndex] = React.useState(0); // Track active tab
+  const progressInterval = progressIntervals[activeIndex]; // Get the progress interval for the active tab
 
-const headerTabs = [
-  { headerText: 'Headless Migration', index: 0 },
-  { headerText: 'Ai Integration', index: 1 },
-  { headerText: 'Microservices', index: 2 },
-];
-
-let flavourText = 'random flavour text';
-let progressRingText = 'sampleText';
-
-export const ReactiveCard = ({ bodyText, seoText }: ReactiveCardProps) => {
-  const [progress, setProgress] = React.useState(0);
-  const [activeIndex, setActiveIndex] = React.useState(0); // Track active tab index
-
-function setTheIndex(index: number): void {
-  setActiveIndex(index);
-  console.log('Active index:', index);
-
-  if (index === 0) {
-    progressInterval = 1;
+  //stepping thriough tabs logic
+  function setTheIndex(index: number): void {
+    setActiveIndex(index);
     setProgress(0);
-    flavourText = bodyText[0];
-    progressRingText = seoText[0];
   }
-  if (index === 1) {
-    progressInterval = 0.75;
-    setProgress(0);
-    flavourText = bodyText[1];
-  }
-  if (index === 2) {
-    progressInterval = 0.5;
-    setProgress(0);
-    flavourText = bodyText[2];
-  }
-}
 
+  // animation progress logic
   useEffect(() => {
     setTimeout(() => {
       if (progress < 0.6 * progressInterval) {
@@ -68,28 +46,29 @@ function setTheIndex(index: number): void {
 
   return (
     <div className={styles.cardContainer}>
-      <ProgressRing 
-      progress={progress}
-      seoText={seoText[activeIndex]}></ProgressRing>
+      <ProgressRing
+        progress={progress}
+        seoText={seoText[activeIndex]}
+      />
 
-  <div className={styles.cardInteractiveContainer}>
-      <div className={styles.cardInteractiveHeader}>
-        <span className={styles.cardInteractiveHeaderTabs}>
-          {headerTabs.map((item, index) => (
-            <span
-              key={index}
-              className={`${styles.cardInteractiveHeaderTab}
-              ${activeIndex === index ? styles.activeTab : ''}`} // Apply active class to active tab
-              onClick={() => setTheIndex(index)} // Update activeIndex on click
-            >
-              {item.headerText}
-            </span>
-          ))}
-        </span>
-      </div>
-      <div className={styles.cardInteractiveBody}>
-        <a>{flavourText}</a>
-      </div>
+      <div className={styles.cardInteractiveContainer}>
+        <div className={styles.cardInteractiveHeader}>
+          <span className={styles.cardInteractiveHeaderTabs}>
+            {headerTabs.map((item, index) => (
+              <span
+                key={index}
+                // Apply active class to active tab
+                className={`${styles.cardInteractiveHeaderTab}${activeIndex === index ? styles.activeTab : ""}`}
+                onClick={() => setTheIndex(index)} // Update activeIndex on click
+              >
+                {item}
+              </span>
+            ))}
+          </span>
+        </div>
+        <div className={styles.cardInteractiveBody}>
+          <p>{bodyText[activeIndex]}</p>
+        </div>
       </div>
     </div>
   );
