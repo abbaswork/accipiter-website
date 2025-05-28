@@ -25,8 +25,6 @@ const [services, setServices] = React.useState<string>('');
 
 let service = '';
 
-
-
 const handleService = (e: React.MouseEvent<HTMLAnchorElement>): void => {
   setServices(e.currentTarget.textContent || '');
   formData.service = services;
