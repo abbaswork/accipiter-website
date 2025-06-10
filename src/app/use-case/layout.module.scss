@@ -1,0 +1,32 @@
+.sidebar {
+
+  display: none;
+
+  // ≥1024px: sidebar spans columns 1-3
+  @media (min-width: 1024px) {
+    display: block;
+    grid-column: 1 / 4;
+  }
+
+  // ≥1440px: sidebar spans columns 2-4 (first column empty)
+  @media (min-width: 1440px) {
+    grid-column: 2 / 5;
+  }
+
+}
+
+.blog-content {
+
+  grid-column: 1/-1;
+
+  // ≥1024px: blog content spans columns 4-10
+  @media (min-width: 1024px) {
+    grid-column: 4 / 11;
+  }
+
+  // ≥1440px: blog content spans columns 5-11 (last column empty)
+  @media (min-width: 1440px) {
+    grid-column: 5 / 12;
+  }
+
+}
