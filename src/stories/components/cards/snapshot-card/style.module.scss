@@ -1,0 +1,33 @@
+.snapshot-card {
+
+   display: flex;
+   flex-direction: column;
+   gap: 1.25rem;
+   width: 100%;
+   max-width: 270px;
+   background: #12171D;
+   box-shadow: 5px 5px darkgray;
+   padding: 1.25rem 1rem;
+
+
+   .snapshot-title {
+      font-family: 'Radley', sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      color: #C76831;
+   }
+
+   h3 {
+      font-family: 'Worker Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #C76831;
+   }
+
+   p {
+      font-family: 'Worker Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #FFF;
+   }
+}
