@@ -1,0 +1,6 @@
+@use './../styles/grids' as *;
+@use './../styles/typography.scss' as *;
+
+body.page-body {
+  @include page-grid();
+}
