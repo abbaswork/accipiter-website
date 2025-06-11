@@ -9,26 +9,35 @@ export const Form = ({
   onChange,
   formMessage
 }: FormProps) => {
+const [visible, setVisible] = React.useState<boolean>(false);
 const [services, setServices] = React.useState<string>('');
   const formFields = [
     { label: 'First Name', type: 'text', maxlength: 10, name: 'firstname' },
-    { label: 'Last Name', type: 'text', maxlength: 10, name: 'lastname' },
-    { label: 'Email', type: 'text', maxlength: 100, name: 'email' },
+    { label: 'Website', type: 'text', maxlength: 10, name: 'website' },
+    { label: 'Email', type: 'email', maxlength: 100, name: 'email' },
   ]
   const formSelectableFields = [
-    { label: 'Sample 1', type: 'text' }
+      { label: 'Sample 1', type: 'text' }
     , { label: 'Sample 2', type: 'text' }
     , { label: 'Sample 3', type: 'text' }
     , { label: 'Sample 4', type: 'text' }
     , { label: 'Sample 5', type: 'text' }
   ]
+let visibleOrHiddden = 'form-hidden'
+
+if (visible) {
+  visibleOrHiddden = 'form-visible';
+} else {
+  visibleOrHiddden = 'form-hidden'
+}
 
 let service = '';
 
+
 const handleService = (e: React.MouseEvent<HTMLAnchorElement>): void => {
   setServices(e.currentTarget.textContent || '');
-  formData.service = services;
-  console.log('formData.service updated', formData.service);
+  formData.services = e.currentTarget.textContent || '';
+  console.log('formData.service updated', formData.services);
 };
   return (
     <form className={'form-container'} onSubmit={onSubmit}>
@@ -36,6 +45,9 @@ const handleService = (e: React.MouseEvent<HTMLAnchorElement>): void => {
         <span className={'form-title'}>Get Started with Accipter Tech</span>
         <span className={'form-subtitle'}>Tell us your vision or reach out for expert guidance</span>
       </div>
+
+      {/* The Three Input Fields */}
+
       <div className={'form-content'}>
         {formFields.map((item) => (
           <div className={'form-item'}>
@@ -44,9 +56,11 @@ const handleService = (e: React.MouseEvent<HTMLAnchorElement>): void => {
           </div>
         ))}
 
+{/* Service Dropdown */}
 
-        <div className={'form-item'}>
-          <label className={`${'form-label'}  ${'gradient-text'}`}>Service(s)</label>
+        <div className={'form-item ' + 'pointer-cursor'} onClick={() => {setVisible(!visible); console.log('clicked');}}>
+          <div className={'form-services-container'}>
+          <label className={`${'form-label'}  ${'gradient-text'} ${'pointer-cursor'}`}>Service(s)</label>
           <div>
                   <Image
             className={'form-pointer-button'}
@@ -56,16 +70,22 @@ const handleService = (e: React.MouseEvent<HTMLAnchorElement>): void => {
             height={15}
           />
           </div>
-          <a>
-            {service}
-          </a>
-<div className={'form-select-container'}>
-  <div className={'form-select'}>
- {formSelectableFields.map((item) => (
-      <a onClick={handleService}> {item.label}</a>
-        ))}
-  </div>
+
 </div>
+<div className={'form-services'}>
+          <a>
+            {services}
+          </a>
+          </div>
+<div className={'form-select-container ' + visibleOrHiddden}>
+  
+ {formSelectableFields.map((item) => (
+      <a className={'form-select'} onClick={handleService}> {item.label}</a>
+        ))}
+</div>
+
+{ /* Message Input */ }
+
         </div>
       </div>
       <form className={'form-message-item'}>
