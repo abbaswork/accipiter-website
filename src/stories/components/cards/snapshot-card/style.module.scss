@@ -1,4 +1,8 @@
+@use './../../../../styles/grids.scss' as *;
+
 .snapshot-card {
+
+   @include component-sidebar-grid();
 
    display: flex;
    flex-direction: column;
@@ -29,5 +33,49 @@
       font-weight: 400;
       font-size: 14px;
       color: #FFF;
+   }
+
+   ul {
+      color: #C76831;
+      padding-inline-start: .5rem;
+      list-style: square;
+
+      li {
+         position: relative;
+         // padding-left: 1em;
+
+         // &::before {
+         //    content: ">";
+         //    position: absolute;
+         //    left: 0;
+         //    top: -15%;
+         //    color: #C76831;
+         //    font-weight: bold;
+         // }
+
+         p {
+            font-weight: 600;
+            margin: 0;
+            margin-bottom: .5rem;
+         }
+
+         ul {
+            padding-inline-start: .5rem;
+            list-style: circle;
+
+            li {
+               // padding-left: 0rem;
+
+               &::before {
+                  content: unset;
+                  position: unset;
+               }
+            }
+
+            p {
+               font-weight: 400;
+            }
+         }
+      }
    }
 }

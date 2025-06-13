@@ -1,35 +1,60 @@
 import React from "react";
 import styles from "./style.module.scss";
+import { PrimaryCTA } from "../../buttons/primary/Index";
 
 //creating Props for Card
-export interface SnapshotCardProps {}
+export interface SnapshotCardProps {
+  title: string;
+  challange: string;
+  solution: string;
+  outcome: string;
+  tech: { name: string; subTech: string[] }[];
+  cta: { label: string; link: string };
+}
 
 /** Primary UI component for user interaction */
-export const SnapshotCard = ({}: SnapshotCardProps) => {
+export const SnapshotCard = ({
+  title,
+  challange,
+  solution,
+  outcome,
+  tech,
+  cta,
+}: SnapshotCardProps) => {
   return (
     <div className={styles["snapshot-card"]}>
-      <h2 className={styles["snapshot-title"]}>Case Study Snapshot</h2>
+      <h2 className={styles["snapshot-title"]}>{title}</h2>
       <div className={styles["tech-section"]}>
         <h3>Tech</h3>
-        <div className={styles["tech-row"]}>
-          <div className={styles["tech-icon"]}></div>
-          <p className={styles["tech-text"]}>
-            <span className={styles["tech-pointer"]}>{">"}</span>EC2
-          </p>
-        </div>
+
+        <ul className={styles["tech-list"]}>
+          {tech.map((item, index) => (
+            <li key={index} className={styles["tech-row"]}>
+              <p className={styles["tech-text"]}>{item.name}:</p>
+              <ul className={styles["tech-list"]}>
+                {item.subTech.map((subItem, subIndex) => (
+                  <li key={subIndex} className={styles["tech-row"]}>
+                    <p className={styles["tech-text"]}>{subItem}</p>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className={styles["challange-section"]}>
-        <h3>Tech</h3>
-        <p>Downtrend in SEO despite best practices.</p>
+        <h3>Challange</h3>
+        <p>{challange}</p>
       </div>
       <div className={styles["solution-section"]}>
-        <h3>Tech</h3>
-        <p>Implementation of microservices through AWS and related tech.</p>
+        <h3>Solution</h3>
+        <p>{solution}</p>
       </div>
       <div className={styles["outcome-section"]}>
-        <h3>Tech</h3>
-        <p>100% increase in SEO performance.</p>
+        <h3>Outcome</h3>
+        <p>{outcome}</p>
       </div>
+      <PrimaryCTA cta={cta} style={{ alignSelf: "center"}} />
     </div>
   );
 };
