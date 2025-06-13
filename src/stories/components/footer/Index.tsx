@@ -1,71 +1,68 @@
-import React from 'react';
-import styles from './style.module.scss';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import styles from "./style.module.scss";
+import Image from "next/image";
+import Link from "next/link";
 
-export interface FooterProps {
-
-}
+export interface FooterProps {}
 
 const links = [
-  { label: 'Contact Us', url: '/contact' },
-  { label: 'Privacy Policy', url: '/privacy' },
-  { label: 'Terms of Service', url: '/terms' },
-]
+  { label: "Contact Us", url: "/contact" },
+  { label: "Privacy Policy", url: "/privacy" },
+  { label: "Terms of Service", url: "/terms" },
+];
+
+const socialLinks = [
+  { label: "Facebook", url: "https://facebook.com" },
+  { label: "Twitter", url: "https://twitter.com" },
+  { label: "LinkedIn", url: "https://linkedin.com" },
+  { label: "GitHub", url: "https://github.com" },
+  { label: "Instagram", url: "https://instagram.com" },
+];
 
 export const Footer = () => {
-//Logo was made first as to accomadte for mobile view, which will have the logo on top
-//Whereas the display for the desktop will have the logo on the left
   return (
-    <div className={styles.footerContainer}>
-      <Link href="/" className={styles.footerLogo}>
+    <footer className={styles["footer-container"]}>
+      <Link href="/" className={styles["footer-logo-row"]}>
+        {/* <p className={styles["footer-logo-text"]}>Accipiter</p> */}
         <Image
           src="/logo.svg"
           alt="Logo"
           width={100}
-          height={100}
+          height={0}
+          style={{ height: "100%" }}
+          className={styles["footer-logo"]}
         />
-        </Link>
-      <div className={styles.footerSocialsContainer}>
-        <div className={styles.footerSocials}>
-          <a>ACCIPITER TECH</a>
-          <div className={styles.footerSocialsIcons}>
-            <Link href={"https://www.linkedin.com/company/accipiter-tech/"}>
-              <Image
-                src="/linkedIn.svg"
-                alt="LinkedIn"
-                width={24}
-                height={24}
-              />
-            </Link>
-            <Link href={"https://www.instagram.com/accipiter-tech/"}>
-              <Image
-                src="/instagram.svg"
-                alt="Instagram"
-                width={24}
-                height={24}
-              />
-            </Link>
-            <Link href={"https://www.facebook.com/accipiter-tech/"}>
-              <Image
-                src="/facebook.svg"
-                alt="Facebook"
-                width={24}
-                height={24}
-              />
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className={styles.footerLinkContainer}>
-        {links?.map((item, index) => (
-          <Link key={index} href={item.url} className={styles.footerItem}>
-            {item.label}
+        {/* <p className={styles["footer-logo-text"]}>Tech</p> */}
+      </Link>
+
+      <div className={styles["footer-links"]}>
+        {links.map((link) => (
+          <Link
+            key={link.label}
+            href={link.url}
+            className={styles["footer-link"]}
+          >
+            {link.label}
           </Link>
         ))}
-
       </div>
-    </div>
 
+      <div className={styles["footer-social-links"]}>
+        {socialLinks.map((link) => (
+          <Link
+            key={link.label}
+            href={link.url}
+            className={styles["footer-social-link"]}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+
+      <div className={styles["footer-copyright"]}>
+        &copy; {new Date().getFullYear()} Accipiter Tech Consulting. All rights
+        reserved.
+      </div>
+    </footer>
   );
 };
