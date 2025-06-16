@@ -44,3 +44,35 @@ a {
     color-scheme: dark;
   }
 }
+
+
+
+/*
+Needed for Gradient Animation:
+
+   background: linear-gradient(-45deg, #C2581B,#E7B772, #C2581B, #994B5C, #C2581B);
+   background-size: 400% 400%;
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: gradient 5s ease infinite;
+*/
+ @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}  
+}
+
+b {
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+ 

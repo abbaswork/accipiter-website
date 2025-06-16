@@ -25,7 +25,7 @@
    @include component-grid();
    position: sticky;
    max-height: 40px;
-   font-size: 1.05rem;
+   font-size: 12px;
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
@@ -49,20 +49,17 @@
 
 .navbarItem {
    color: white;
-   width: 100%;
    text-decoration: none;
    text-align: center;
    padding: 0.5rem 1rem;
-   border: 2px solid transparent;  
+   border-bottom: 0px solid transparent;
+   transition: border 1s;
 }
 
 .navbarItem:hover {
    color: orange;
    text-decoration: none;
-   background: 
-      linear-gradient(black, black) padding-box,
-      linear-gradient(to bottom, #C66831, #4f2913) border-box;
-   border-radius: 0.5rem;
+   border-bottom: 1px solid orange;
 }
 
 .navbarItems {
@@ -79,7 +76,7 @@
    background: 
       linear-gradient(black, black) padding-box,
       linear-gradient(to bottom, #C66831, #4f2913) border-box;
-   border-radius: 0.5rem;
+   border-radius: 20px;
    z-index: 1000; // Ensure it appears above other elements
    box-sizing: border-box;
 }
@@ -94,9 +91,9 @@
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
-   padding: 1.25rem 1rem;
+   padding: 1rem 1rem;
    background-color: #12171D;
-   border-radius: 10rem;
+   border-radius: 40px;
    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
    border: 2px solid transparent;
    background: 
@@ -147,9 +144,9 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 1.5rem ;
+            padding: 12px;
             background-color: #12171D;
-            border-radius: 10rem;
+            border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             border: 2px solid transparent;
             background: 
@@ -183,10 +180,8 @@
       linear-gradient(black, black) padding-box,
       linear-gradient(to bottom, #C66831, #4f2913) border-box;
       filter: blur(0.25px);
-      border-radius: 0.5rem;
+      border-radius:20px;
       padding: 0.75rem 0.75rem;
-      width: 2500px;
-
    }
 }
 

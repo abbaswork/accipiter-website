@@ -27,10 +27,10 @@ export const Card = ({ cardType, headerText, subHeaderText }: CardProps) => {
 
           <div style={{ margin: '1.75rem 1.75rem' }}>
             <h2>
-              {headerText}
+              <strong>{headerText}</strong>
             </h2>
           </div>
-          <div style={{ lineHeight: '24px', margin: '1.75rem 1.75rem', fontSize: '1.1rem'  }}>
+          <div style={{ margin: '1.75rem 1.75rem', fontSize: '16px'  }}>
             <a>
               {subHeaderText}
             </a>

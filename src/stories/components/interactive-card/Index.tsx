@@ -49,8 +49,13 @@ function setTheIndex(index: number): void {
 }
 
   useEffect(() => {
-    setTimeout(() => {
-      if (progress < 0.6 * progressInterval) {
+    // Clear any previous timers to prevent overlapping effects
+    let timer: NodeJS.Timeout;
+    if (progress < 1 * progressInterval) {
+      timer = setTimeout(() => {
+        if (progress < 0.03 * progressInterval) {
+          setProgress(progress + 0.003)
+        } else if (progress < 0.6 * progressInterval) {
         setProgress(progress + 0.03);
       } else if (progress < 0.7 * progressInterval) {
         setProgress(progress + 0.02);
@@ -63,14 +68,19 @@ function setTheIndex(index: number): void {
       } else if (progress < 1 * progressInterval) {
         setProgress(progress + 0.0004);
       }
-    }, 50);
-  }, [progress]);
-
+      }, 50);
+    }
+    //cleanup function that runs when the component unmounts or when progress changes
+    return () => clearTimeout(timer);
+    
+  }
+  , [progress, progressInterval]);
   return (
     <div className={styles.cardContainer}>
       <ProgressRing 
       progress={progress}
-      seoText={seoText[activeIndex]}></ProgressRing>
+      seoText={seoText[activeIndex]}
+      activeIndex={activeIndex}></ProgressRing>
 
   <div className={styles.cardInteractiveContainer}>
       <div className={styles.cardInteractiveHeader}>

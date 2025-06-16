@@ -1,51 +1,72 @@
 import React from 'react';
 import styles from './style.module.scss';
 
-export interface ButtonProps {
-  
-  gradientText?: string;
+export interface CardProps {
   heroText?: string;
   subText?: string;
-  centerCard?: boolean;
   authorText?: string;
+  index?: number;
 }
-/**
- * To bold a certain word in an <a> tag, you can wrap the word with a <strong> tag.
- * For example:
- * <a>
- *   Unlike any <strong>Other</strong> Consultancy
- * </a>
- */
-/** Primary UI component for user interaction */
-export const ReviewCard = ({heroText, subText, centerCard, authorText
-  , gradientText}: ButtonProps) => {
-  let cardClass = styles.centerCard
 
-if (centerCard == false) {
-  cardClass = styles.cardReviewTemplate
+export const ReviewCards = ({heroText, subText,  authorText}: CardProps) => {
+
+
+
+return (<div className={styles.reviewCardsContainer}>
+<ReviewCard 
+ heroText={'<b>Sample G</b> Normal Text'}
+ subText={subText}
+ authorText={authorText}
+ index={0} ></ReviewCard>
+
+<ReviewCard 
+index={1}
+ heroText={heroText}
+ subText={subText}
+ authorText={authorText}
+ ></ReviewCard>
+
+<ReviewCard 
+ heroText={heroText}
+ subText={subText}
+ authorText={authorText}
+ index={2}></ReviewCard>
+</div>
+)
+
+
 }
+
+export const ReviewCard = ({ heroText, subText, authorText, index }: CardProps) => {
+//Just little index's to differentiate which one is which card.
+  let cardClass = styles.centerCard;
+
+if (index === 0) {
+  cardClass = styles.leftCardReviewTemplate;
+} else if (index === 1) {
+  cardClass = styles.centerCardReviewTemplate;
+} else if (index === 2) {
+  cardClass = styles.rightCardReviewTemplate;
+} 
 
   return (
-  <div className={`${styles.cardReviewTemplate} ${cardClass}`}>
-
-
+    <div className={`${styles.cardReviewTemplate} ${cardClass}`}>
       <div className={styles.headerText}>
-
         <a>
-          <span className={styles.gradientText}>{gradientText}</span> {heroText}
+          {heroText ? (
+            <span
+              // Renders HTML from heroText string
+              dangerouslySetInnerHTML={{ __html: heroText }}
+            />
+          ) : null}
         </a>
-
       </div>
-
       <div className={styles.bottomText}>
-
         <a>
           <strong>  {subText} </strong>
         </a>
-
-        <a style={{ color: "gray", marginTop: "5px" }} > {authorText}</a>
-</div>
+        <a style={{ color: "#D4D4d8", marginTop: "5px", fontSize: "14px" }} >{authorText}</a>
+      </div>
     </div>
-
   );
 };
