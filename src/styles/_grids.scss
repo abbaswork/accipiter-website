@@ -42,7 +42,7 @@
 
     //use 10 out of 12 on desktop standard screens
     @media (min-width: 1440px) {
-        grid-column: span 10;
+        grid-column: 2 / span 10;
     }
 }
 

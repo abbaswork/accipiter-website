@@ -1,5 +1,4 @@
 @use './../../../styles/grids.scss' as *;
-@use './../../../styles/typography.scss' as *;
 @use './../../../styles/breakpoints' as *;
 
 .use-case-hero-section {
@@ -35,71 +34,12 @@
          flex-direction: row;
       }
 
-      .hero-icon {}
+      // .hero-icon {}
 
       .hero-author {
          color: #C2581B
       }
 
-      .hero-position {}
+      // .hero-position {}
    }
-}
-
-.footer-container {
-   display: flex;
-   flex-direction: column;
-   gap: 1rem;
-   color: white;
-   background: black;
-   align-items: center;
-   text-align: center;
-   font-family: "Work Sans", sans-serif;
-   padding-bottom: 1.5rem;
-   @include component-grid();
-
-   .footer-logo-row {
-      display: flex;
-      flex-direction: row;
-      gap: .5rem;
-
-      .footer-logo {}
-
-      .footer-logo-text {
-         font-size: 1.325rem;
-         align-content: center;
-
-         &:hover {
-            color: #C2581B
-         }
-      }
-   }
-
-   .footer-links {
-      display: flex;
-      flex-direction: row;
-      gap: .5rem;
-
-      .footer-link {
-         font-size: .875rem;
-
-         &:hover {
-            color: #C2581B
-         }
-      }
-   }
-
-   .footer-social-links {
-      display: flex;
-      gap: 1rem;
-
-      .footer-social-link {
-         font-size: .875rem;
-
-         &:hover {
-            color: #C2581B
-         }
-      }
-   }
-
-   .footer-copyright {}
 }
