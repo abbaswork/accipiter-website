@@ -1,5 +1,6 @@
 @use './../../../styles/grids.scss' as *;
 @use './../../../styles/typography.scss' as *;
+@use './../../../styles/breakpoints' as *;
 
 .use-case-hero-section {
    @include component-grid();
@@ -21,9 +22,18 @@
 
    .hero-author-container {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      gap: 1rem;
+      flex-direction: column;
+      gap: 0rem;
+
+      p {
+         margin: 0;
+      }
+
+      @include breakpoint(desktop-small) {
+         gap: 1.5rem;
+         flex-direction: row;
+      }
 
       .hero-icon {}
 
