@@ -10,11 +10,6 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-  args: { onClick: fn() },
 } satisfies Meta<typeof Footer>;
 
 export default meta;
@@ -29,7 +24,23 @@ const Template = (args: JSX.IntrinsicAttributes & FooterProps) => (
 export const Primary: Story = {
   render: Template, // Use the Template for rendering
   args: {
-    primary: true,
-    label: 'Footer',
+    links: [
+      { label: 'Contact Us', url: '/contact' },
+      { label: 'Privacy Policy', url: '/privacy' },
+      { label: 'Terms of Service', url: '/terms' },
+    ],
+    socialLinks: [
+      { label: 'Facebook', url: 'https://facebook.com' },
+      { label: 'Twitter', url: 'https://twitter.com' },
+      { label: 'LinkedIn', url: 'https://linkedin.com' },
+      { label: 'GitHub', url: 'https://github.com' },
+      { label: 'Instagram', url: 'https://instagram.com' },
+    ],
+    logo: {
+      src: '/logo.svg',
+      alt: 'Logo',
+    },
+    copyright: `© ${new Date().getFullYear()} Accipiter Tech Consulting. All rights
+        reserved.`
   },
 };

@@ -1,7 +1,12 @@
 @use './../../../styles/grids.scss' as *;
-@use './../../../styles/typography.scss' as *;
 
 .footer-container {
+   margin-top: 2rem;
+   position: absolute;
+   top: 100%;
+   left: 0;
+   width: 100vw;
+   z-index: 2;
    display: flex;
    flex-direction: column;
    gap: 1rem;
@@ -13,12 +18,13 @@
    padding-bottom: 1.5rem;
    @include component-grid();
 
+
    .footer-logo-row {
       display: flex;
       flex-direction: row;
       gap: .5rem;
 
-      .footer-logo {}
+      // .footer-logo {}
 
       .footer-logo-text {
          font-size: 1.325rem;
@@ -57,5 +63,5 @@
       }
    }
 
-   .footer-copyright {}
+   // .footer-copyright {}
 }
