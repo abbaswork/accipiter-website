@@ -7,7 +7,6 @@ export interface UsecaseHeroProps {
   authorName: string;
   authorPosition: string;
   authorImage?: string;
-  onClick?: () => void;
 }
 
 export const UsecaseHero = ({
@@ -15,7 +14,6 @@ export const UsecaseHero = ({
   authorName,
   authorPosition,
   authorImage,
-  onClick,
 }: UsecaseHeroProps) => {
   return (
     <div className={styles["use-case-hero-section"]}>
@@ -23,7 +21,7 @@ export const UsecaseHero = ({
       <div className={styles["hero-author-container"]}>
         <Image
           className={styles["hero-icon"]}
-          src="/author-icon.svg"
+          src={authorImage || "/author-icon.svg"}
           alt="Author icon"
           width={32}
           height={32}
