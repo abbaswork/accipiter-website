@@ -54,7 +54,7 @@ export const SnapshotCard = ({
         <h3>Outcome</h3>
         <p>{outcome}</p>
       </div>
-      <PrimaryCTA cta={cta} style={{ alignSelf: "center"}} />
+      <PrimaryCTA label={cta.label} link={cta.link} style={{ alignSelf: "center"}} />
     </div>
   );
 };
