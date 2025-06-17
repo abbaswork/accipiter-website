@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import { UsecaseHero, UsecaseHeroProps } from './Index'; // Make sure this path is correct
 import './../../../styles/pages/global.scss';
 import { JSX } from 'react';
@@ -10,8 +9,6 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
-  args: { onClick: fn() },
 } satisfies Meta<typeof UsecaseHero>;
 
 export default meta;
@@ -29,7 +26,6 @@ export const Primary: Story = {
     title: 'Use Case Hero Title',
     authorName: 'John Doe',
     authorPosition: 'Software Engineer',
-    authorImage: '/author-icon.svg', // Example image path
-    onClick: fn(),
+    authorImage: '/author-icon.svg'
   },
 };
