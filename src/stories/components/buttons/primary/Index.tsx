@@ -3,7 +3,8 @@ import styles from "./style.module.scss";
 
 //creating Props for Card
 export interface PrimaryCTAProps {
-  cta: { label: string; link: string };
+  label: string;
+  link: string;
   style?: React.CSSProperties;
   className?: string;
   onClick?: () => void;
@@ -11,7 +12,8 @@ export interface PrimaryCTAProps {
 
 /** Primary UI component for user interaction */
 export const PrimaryCTA = ({
-  cta,
+  link,
+  label,
   style,
   className,
   onClick,
@@ -19,13 +21,13 @@ export const PrimaryCTA = ({
   return (
     <a
       className={`${styles["primary-cta"]} ${className}`}
-      href={cta.link}
+      href={link}
       style={style}
       onClick={onClick}
       target="_blank"
       rel="noopener noreferrer"
     >
-      {cta.label}
+      {label}
     </a>
   );
 };

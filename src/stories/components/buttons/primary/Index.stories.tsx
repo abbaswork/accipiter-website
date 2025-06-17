@@ -26,6 +26,7 @@ const Template = (args: JSX.IntrinsicAttributes & PrimaryCTAProps) => (
 export const Primary: Story = {
   render: Template, // Use the Template for rendering
   args: {
-    cta: { label: "Book a Consultation", link: "#" },
+    label: "Book a Consultation",
+    link: "#",
   },
 };
