@@ -43,7 +43,7 @@ export const SnapshotCard = ({
         </ul>
       </div>
       <div className={styles["challange-section"]}>
-        <h3>Challange</h3>
+        <h3>Challenge</h3>
         <p>{challange}</p>
       </div>
       <div className={styles["solution-section"]}>

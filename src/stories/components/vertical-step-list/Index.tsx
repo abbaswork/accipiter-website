@@ -7,7 +7,7 @@ export interface ButtonProps {
 
 
 
-export const Button = ({
+export const VerticalStepList = ({
   
 }) => {
   

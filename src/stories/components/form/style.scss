@@ -4,6 +4,7 @@
 .hero {
    @include component-grid();
 }
+
 .form-container {
    display: flex;
    align-items: center;
@@ -11,8 +12,9 @@
    background-color: #12171D;
    flex-direction: column;
    padding: 2rem;
-   gap:15px;
+   gap: 15px;
    color: white;
+
    @media screen and (min-width: 1024px) {
       width: 48rem;
       max-height: 624px;
@@ -28,21 +30,25 @@
    flex-direction: column;
    font-size: 28px;
 }
+
 .form-title {
+   font-family: 'Radley', sans-serif;
    font-size: 28px;
    margin-bottom: 0.5rem;
    text-align: center;
-   background: linear-gradient(-45deg, #C2581B,#E7B772, #C2581B, #994B5C, #C2581B, #E18043);
+   background: linear-gradient(-45deg, #C2581B, #E7B772, #C2581B, #994B5C, #C2581B, #E18043);
    background-size: 400% 400%;
    background-clip: text;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    animation: gradient 10s ease infinite;
 }
+
 .form-subtitle {
    font-size: 16px;
    text-align: center;
 }
+
 .form-services {
    margin: 0 0.5rem;
    display: flex;
@@ -63,8 +69,8 @@
    box-sizing: border-box;
 }
 
-   .form-select:hover {
-   border-color:  #C2581B;
+.form-select:hover {
+   border-color: #C2581B;
    border-left-style: solid;
    padding-left: 1px;
    transition: border 0.1s, transform 0.15s;
@@ -78,15 +84,21 @@
    align-items: flex-start;
    flex-direction: column;
 
+   .form-label {
+      font-size: .75rem;
+   }
 
-      @media screen and (min-width: 1024px) {
-         display: grid;
-         grid-template-columns: repeat(2, 1fr);
-         grid-template-rows: repeat(2, 1fr);
-         margin: 0 3rem 0 6rem;;
+
+   @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      margin: 0 3rem 0 6rem;
+      ;
 
    }
 }
+
 .form-input {
    margin: 0 0.5rem;
    width: 100%;
@@ -97,7 +109,8 @@
    border: none;
    box-sizing: border-box;
 }
-.form-services-container{
+
+.form-services-container {
    z-index: 5;
    display: flex;
    flex-direction: row;
@@ -111,7 +124,8 @@
    display: flex;
    margin: auto;
    flex-direction: column;
-   border-radius: 20cm;;
+   border-radius: 20cm;
+   position: relative;
    height: 3rem;
    background-color: #0D0F12;
    margin: 1rem 0;
@@ -133,25 +147,33 @@
    box-sizing: border-box;
    background-color: #0D0F12;
 }
+
 .form-hidden {
    display: none;
 }
+
 .form-visible {
    display: flex;
 }
+
 .form-pointer-button {
+   position: absolute;
+   top: 25%;
+   right: 10px;
    margin: 5px 5px 0 0;
-      fill: orange;
-   }
+   fill: orange;
+}
+
 .gradient-text {
    width: 100%;
    background: linear-gradient(to right, #ff7e5f, #feb47b);
    background-clip: text;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
- }
+}
+
 .form-message-item {
-   width:100%;
+   width: 100%;
    padding: 0.5rem 1rem;
    display: flex;
    margin: auto;
@@ -159,26 +181,29 @@
    border-radius: 2rem;
    height: 22rem;
    background-color: #0D0F12;
+
    @media screen and (min-width: 1024px) {
       width: 40rem;
    }
 }
+
 .form-button-container {
- display: flex;
- align-items: center;
- justify-content: center;
- min-width: 9rem;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      border: 2px solid transparent;
-      background: 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-width: 9rem;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+   border: 2px solid transparent;
+   background:
       linear-gradient(#12171D, #12171D) padding-box,
-   linear-gradient(-45deg, #f8772d, #ffbc88, #C66831, #feb47b);
-	background-size: 400% 400%;
-	animation: gradient 10s ease infinite;
-      border-radius: 20cm;
-      padding: 0.75rem 0.75rem;
+      linear-gradient(-45deg, #f8772d, #ffbc88, #C66831, #feb47b);
+   background-size: 400% 400%;
+   animation: gradient 10s ease infinite;
+   border-radius: 20cm;
+   padding: 0.75rem 0.75rem;
    cursor: pointer;
 }
+
 .form-button {
    color: white;
    font-size: 16px;
@@ -189,18 +214,21 @@
    border: none;
    cursor: pointer;
 }
-.pointer-cursor{
+
+.pointer-cursor {
    cursor: pointer;
 }
- @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}  
-}
 
+@keyframes gradient {
+   0% {
+      background-position: 0% 50%;
+   }
+
+   50% {
+      background-position: 100% 50%;
+   }
+
+   100% {
+      background-position: 0% 50%;
+   }
+}

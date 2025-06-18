@@ -39,6 +39,6 @@ export const Primary: Story = {
         subTech: ['GraphQL', 'REST APIs', 'CI/CD', 'Monitoring'],
       },
     ],
-    cta: { label: 'Read More', link: '#' },
+    cta: { label: 'Book a Consultation', link: '#' },
   },
 };

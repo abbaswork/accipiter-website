@@ -1,22 +1,29 @@
 @use './../../../../styles/grids.scss' as *;
 @use './../../../../styles/typography.scss' as *;
 
+.hero {
+   @include component-grid();
+}
+
+.reviewCardsContainer {
+   display: flex;
+   flex-direction: row;
+   gap: 50px;
+}
+
 .cardReviewTemplate {
-//I want the card to be 4 grid-columns wide
    @include component-grid();
    display: flex;
    font-family: sans-serif;
    grid-column: span 4;
-   height: 17rem;
+   width: 277.4px;
+   height: 257.69px;
    color: white;
    border: 2px solid transparent;
    border-radius: 20px;
-   background: 
-      linear-gradient(#12171D, #12171D) padding-box,
-      linear-gradient(to bottom right, #F6CA56, #C2581B) border-box;
-flex-direction: column;
-gap: 1rem;
-justify-content: space-between;
+   flex-direction: column;
+   gap: 1rem;
+   justify-content: space-between;
 }
 
 .gradientText {
@@ -24,36 +31,59 @@ justify-content: space-between;
    background-clip: text;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
- }
+}
 
- .headerText {
+.headerText {
    display: flex;
    justify-content: center;
-font-size: 1.5rem;
-margin-top: 6rem;
-margin-left: 5rem;
-margin-right: 5rem;
-text-align: center;
- }
- 
- .bottomText {
+   font-size: 1.5rem;
+   margin-top: 3rem;
+   margin-left: 5rem;
+   margin-right: 5rem;
+   text-align: center;
+}
 
+.bottomText {
+   font-size: 18px;
    display: flex;
    flex-direction: column;
    margin: 0rem 2rem 1rem 2rem;
- }
+}
 
- .centerCard {
+.centerCardText {
+   font-size: 24px;
+   margin: 0 auto;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.centerCardReviewTemplate {
    border-radius: 20px;
    background:
       url(./bottomBackground.svg) bottom right / cover no-repeat,
       url(./upperBackground.svg) top left / cover no-repeat,
       linear-gradient(#12171D, #12171D) padding-box,
+      linear-gradient(to bottom right, #C2581B, #F6CA58) border-box;
+   background-size: 50%;
+   height: 287px;
+}
+
+b {
+   font-weight: 400;
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.leftCardReviewTemplate {
+   background:
+      linear-gradient(#12171D, #12171D) padding-box,
       linear-gradient(to bottom right, #F6CA56, #C2581B) border-box;
-      background-size: 50%;
-      height: 18rem;
- }
- .authorText {
-   color: gray;
-    margin-top: 5px;
- }
+}
+
+.rightCardReviewTemplate {
+   background:
+      linear-gradient(#12171D, #12171D) padding-box,
+      linear-gradient(to bottom left, #F6CA56, #C2581B) border-box;
+}

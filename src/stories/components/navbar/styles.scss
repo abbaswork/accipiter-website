@@ -6,7 +6,7 @@
    //layout for mobile first
    display: flex;
    padding: 0;
-   box-sizing: border-box; 
+   box-sizing: border-box;
    width: 100%;
    align-items: center;
    justify-content: space-between;
@@ -43,6 +43,8 @@
 
    .navbar-logo {
       color: white;
+     font-family: 'Radley', sans-serif;
+     font-size: 1rem;
    }
 }
 
@@ -57,7 +59,6 @@
 
 .navbar-logo {
    font-size: 1.5rem;
-   min-width: 200px; // optional minimum width
    max-width: 100%; // prevent overflow
    padding: 0.5rem;
    text-decoration: none;
@@ -65,12 +66,15 @@
 }
 
 .navbar-item {
+   font-size: 0.75rem;
    color: white;
    width: 100%;
    text-decoration: none;
    text-align: center;
    padding: 0.5rem 1rem;
    border: 2px solid transparent;
+   border-bottom: 0px solid transparent;
+   transition: border 1s;
 
    @media screen and (min-width: 1024px) {
       width: auto;
@@ -81,12 +85,9 @@
 }
 
 .navbar-item:hover {
-   color: orange;
+   color: #C2581B;
    text-decoration: none;
-   background:
-      linear-gradient(black, black) padding-box,
-      linear-gradient(to bottom, #C66831, #4f2913) border-box;
-   border-radius: 0.5rem;
+   border-bottom: 1px solid #C2581B;
 }
 
 .navbar-items {
@@ -105,7 +106,7 @@
    background:
       linear-gradient(black, black) padding-box,
       linear-gradient(to bottom, #C66831, #4f2913) border-box;
-   border-radius: 0.5rem;
+   border-radius: 2rem;
    z-index: 10;
    box-sizing: border-box;
    padding: 1rem 1rem;
@@ -128,7 +129,7 @@
       background:
          linear-gradient(black, black) padding-box,
          linear-gradient(to bottom, #C66831, #4f2913) border-box;
-      border-radius: 1rem;
+      border-radius: 2rem;
       padding: 0.5rem 1rem;
    }
 }
@@ -140,9 +141,9 @@
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
-   padding: 1.25rem 1rem;
+   padding: 1rem 1rem;
    background-color: #12171D;
-   border-radius: 10rem;
+   border-radius: 40px;
    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
    border: 2px solid transparent;
    background:
@@ -169,23 +170,22 @@
 
 .consultation-button {
    display: none;
-   color: yellow;
 
    @media screen and (min-width: 1024px) {
       display: flex;
-      min-width: 140px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       border: 2px solid transparent;
       background:
          linear-gradient(black, black) padding-box,
          linear-gradient(to bottom, #C66831, #4f2913) border-box;
       filter: blur(0.25px);
-      border-radius: 0.5rem;
+      border-radius: 2rem;
       padding: 0.75rem 0.75rem;
    }
 }
 
 .consultation-text {
+   font-size: .75rem;
    color: white;
    text-decoration: none;
 
