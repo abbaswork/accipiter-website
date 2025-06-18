@@ -41,7 +41,15 @@
    ul {
       color: #C76831;
       padding-inline-start: 1.5rem;
-      list-style: square;
+      list-style: disc;
+      // Custom orange and bigger bullet
+      li {
+         position: relative;
+         &::marker {
+         color: #C76831;
+         font-size: 1.2em;
+         }
+      }
 
       li {
          position: relative;
