@@ -1,0 +1,21 @@
+@use "sass:map";
+
+//supported breakpoints
+$breakpoints: (
+  "mobile": 0,
+  "tablet": 768px,
+  "desktop-small": 1024px,
+  "desktop": 1440px
+);
+
+//mixin that uses breakpoint map based on name
+@mixin breakpoint($name) {
+  $value: map.get($breakpoints, $name);
+  @if $value != null {
+    @media (min-width: #{$value}) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$name}`.";
+  }
+}

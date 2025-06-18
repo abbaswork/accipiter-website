@@ -1,0 +1,33 @@
+@use './../../../../styles/grids.scss' as *;
+
+.primary-cta {
+   display: inline-flex;
+   font-size: 1rem;
+   color: white;
+   background-color: inherit;
+   padding: 0.625rem 1.25rem;
+   position: relative;
+   border: none;
+   border-radius: 20px;
+   overflow: hidden;
+   z-index: 1;
+   width: auto;
+   max-width: max-content;
+   min-width: 0;
+}
+
+.primary-cta::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   padding: 3px;
+   border-radius: 20px;
+   background: linear-gradient(90deg, #DC9D61 0%, rgba(194, 88, 27, 0.5) 100%);
+   -webkit-mask:
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+   -webkit-mask-composite: xor;
+   mask-composite: exclude;
+   pointer-events: none;
+   z-index: 2;
+}
