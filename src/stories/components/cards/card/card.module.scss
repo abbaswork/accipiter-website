@@ -21,26 +21,16 @@
 .metricGamerTemplate {
    background: 
    url(./metricGamerBackground.svg) center / cover no-repeat,
-   url(./cardBackPattern.svg) center / cover no-repeat,
    linear-gradient(#12171D, #12171D) padding-box,
-   linear-gradient(to right, #C2581B, #AA5467) border-box;
-
+   linear-gradient(to right, #351150, #F6CA56) border-box;
+   box-shadow: 0 0 8px #AA5467; 
 }
 
 
 .syrianFoundationTemplate {
    background: 
    url(./syrianFoundationBackground.svg) center / cover no-repeat,
-   url(./cardBackPattern.svg) center / cover no-repeat,
-   linear-gradient(#12171D, #12171D) padding-box,
-   linear-gradient(to right, #C2581B, #AA5467) border-box;
-}
-
-.cardHeader {
-   margin: 1.75rem 1.75rem;
-}
-.cardSubHeader {
-   line-height: 24px;
-   margin: 1.75rem 1.75rem;
-   font-size: 1.1rem;  
+   linear-gradient(#1D1C1F, #1D1C1F) padding-box,
+   linear-gradient(to right, #CE454B, #FFFFFF, ) border-box;
+   box-shadow: 0 0 8px #AA5467;
 }
