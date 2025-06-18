@@ -1,0 +1,9 @@
+@use './../styles/grids' as *;
+@use './../styles/typography.scss' as *;
+@use './../styles/breakpoints' as *;
+
+body.page-body {
+  @include page-grid();
+  background: black;
+  padding-top: 4rem;
+}

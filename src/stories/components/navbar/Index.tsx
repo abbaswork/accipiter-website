@@ -1,8 +1,8 @@
-'use client';
-import React from 'react';
-import styles from './style.module.scss';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import "./styles.scss";
+import Link from "next/link";
+import Image from "next/image";
 
 export interface HamburgerProps {
   onOrOff: boolean;
@@ -14,73 +14,74 @@ export type LinkType = {
   url: string;
 };
 
-const links = [
-  { label: 'About', url: '/about.com', },
-  { label: 'About', url: '/about.com' },
-  { label: 'About', url: '/about.com' },
-  { label: 'About', url: '/about.com' },
-  { label: 'About', url: '/about.com' }
-]
-
+let links: LinkType[] = [
+  { label: "About", url: "/about.com" },
+  { label: "About", url: "/about.com" },
+  { label: "About", url: "/about.com" },
+  { label: "About", url: "/about.com" },
+  { label: "About", url: "/about.com" },
+];
 
 export const Navbar = () => {
-  const [onOrOff, setOnOrOff] = React.useState(false);
-  
-  //State to track the visibility of the navbar
-  let onOrOffClass = styles.hidden;
-  if (onOrOff) {
-    onOrOffClass = styles.visible;
-  } else {
-    onOrOffClass = styles.hidden;
-  }
-  return (
+  const [mobileDisplay, setMobileDisplay] = React.useState(false);
 
-    <div className={styles.navbar}>
-     <NavbarLogo />
-     <HamburgerMenu 
-     onOrOff = {onOrOff}
-     setOnOrOff = {setOnOrOff}/>
-      <div className={styles.navbarContainer}>
-      <div className={`${styles.navbarItems} ${onOrOffClass}`}>
-        {links?.map((item, index) => (
-          <Link key={index} href={item.url} className={styles.navbarItem}>
-            {item.label}
+  //State to track the visibility of the navbar on mobile only
+  let mobileDisplayClass = "mobile-hide";
+  if (mobileDisplay) {
+    mobileDisplayClass = "mobile-display";
+  } else {
+    mobileDisplayClass = "mobile-hide";
+  }
+
+  return (
+    <div className={"navbar"}>
+      <div className={"navbar-container"}>
+        <NavbarLogo />
+        <div className={`navbar-items ${mobileDisplayClass}`}>
+          {links?.map((item, index) => (
+            <Link key={index} href={item.url} className={"navbar-item"}>
+              {item.label}
+            </Link>
+          ))}
+          <Link
+            className={`mobile-demo navbar-item`}
+            key={links.length + 1}
+            href={"/consultation"}
+          >
+            {"Consultation"}
           </Link>
-        ))}
+        </div>
+        <HamburgerMenu onOrOff={mobileDisplay} setOnOrOff={setMobileDisplay} />
+        <div className="consultation-button">
+          <Link href="/consultation" className={"consultation-text"}>
+            Book a Consultation
+          </Link>
         </div>
       </div>
-      <div className={`${styles.consultationButton}`}>    
-            <Link href="/consultation" style={{ color: 'white', textDecoration: 'none', width: '100%' }}>
-          Book a Consultation
-        </Link>
-      </div>
-      </div>
+    </div>
   );
 };
 
-
 export const NavbarLogo = () => {
   return (
-    <div className={styles.navbarLogo}>
-      <Link href="/" className={styles.navbarLogo}>
-      Accipter Tech</Link>
+    <Link href="/" className={"navbar-logo"}>
+      Accipter Tech
+    </Link>
+  );
+};
 
+export const HamburgerMenu = ({ onOrOff, setOnOrOff }: HamburgerProps) => {
+  return (
+    <div className={"hamburger-container"}>
+      <div className={"navbar-hamburger"} onClick={(e) => setOnOrOff(!onOrOff)}>
+        <Image
+          className={"navbar-hamburger"}
+          src="/hamburger.svg"
+          alt="Hamburger Menu"
+          width={50}
+          height={50}
+        />
+      </div>
     </div>
   );
-}
-
-export const HamburgerMenu = ({onOrOff, setOnOrOff}: HamburgerProps) => {
-  return (
-    <div className={styles.hamburgerContainer}>
-        <div className={styles.navbarHamburger} onClick={(e) => setOnOrOff(!onOrOff)}>
-          <Image
-            className={styles.navbarHamburger}
-            src="/hamburger.svg"
-            alt="Hamburger Menu"
-            width={50}
-            height={50}
-          />
-        </div>
-      </div>
-  )
-}
+};
