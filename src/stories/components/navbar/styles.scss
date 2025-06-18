@@ -1,0 +1,258 @@
+@use './../../../styles/grids.scss' as *;
+@use './../../../styles/typography.scss' as *;
+@use './../../../styles/breakpoints' as *;
+
+.navbar {
+   //layout for mobile first
+   display: flex;
+   padding: 0;
+   box-sizing: border-box; 
+   width: 100%;
+   align-items: center;
+   justify-content: space-between;
+   margin: 2rem auto;
+   position: fixed;
+   top: 10px;
+   z-index: 10;
+   justify-self: center;
+   @include navbar-grid();
+
+   @include breakpoint(desktop-small) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+   }
+}
+
+.navbar-container {
+   //layout for mobile first
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   align-items: center;
+   padding-left: 1rem;
+
+
+   @media screen and (min-width: 1024px) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   }
+
+   .navbar-logo {
+      color: white;
+   }
+}
+
+.navbar-center {
+   position: sticky;
+   max-height: 40px;
+   font-size: 12px;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.navbar-logo {
+   font-size: 1.5rem;
+   min-width: 200px; // optional minimum width
+   max-width: 100%; // prevent overflow
+   padding: 0.5rem;
+   text-decoration: none;
+   color: white;
+}
+
+.navbar-item {
+   color: white;
+   text-decoration: none;
+   text-align: center;
+   padding: 0.5rem 1rem;
+   border-bottom: 0px solid transparent;
+   transition: border 1s;
+}
+
+.navbar-item:hover {
+   color: orange;
+   text-decoration: none;
+   border-bottom: 1px solid orange;
+}
+
+.navbar-items {
+   //layout
+   width: 100%;
+   position: absolute;
+   top: calc(100% + 10px);
+   width: 100vw;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-start;
+   color: white;
+   border: 2px solid transparent;
+
+   //styles
+   background:
+      linear-gradient(black, black) padding-box,
+      linear-gradient(to bottom, #C66831, #4f2913) border-box;
+   border-radius: 20px;
+   z-index: 1000; // Ensure it appears above other elements
+   box-sizing: border-box;
+   padding: 1rem 1rem;
+
+   //desktop
+   .mobile-demo {
+      display: block;
+      margin: auto;
+
+      @media screen and (min-width: 1024px) {
+         display: none;
+      }
+   }
+
+   @media screen and (min-width: 1024px) {
+      width: auto;
+      position: unset;
+      display: flex;
+      flex-direction: row;
+      background:
+         linear-gradient(black, black) padding-box,
+         linear-gradient(to bottom, #C66831, #4f2913) border-box;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+   }
+}
+
+.hamburger-container {
+   margin-right: 0.5rem;
+   max-height: 40px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 1rem;
+   background-color: #12171D;
+   border-radius: 40px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+   border: 2px solid transparent;
+   background:
+      linear-gradient(black, black) padding-box,
+      linear-gradient(to bottom, #C66831, #4f2913) border-box;
+   filter: blur(0.25px);
+   z-index: 1000;
+   top: 10;
+   right: 10;
+
+   @media screen and (min-width: 1024px) {
+      display: none;
+   }
+}
+
+.navbar-hamburger {
+   display: block;
+   width: 1.5rem;
+   height: 1.5rem;
+   cursor: pointer;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.consultation-button {
+   display: none;
+   color: yellow;
+
+.visible {
+   display: flex;
+}
+
+
+.consultationButton {
+   display: none;
+}
+
+@media screen and (min-width: 1024px) {
+   .navbar{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 100%;
+      gap: 12rem;
+   }
+      .navbarContainer {
+            @include component-grid();
+            position: sticky;
+            display: flex;
+            max-height: 40px;
+            font-size: 1.05rem;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background-color: #12171D;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid transparent;
+            background: 
+            linear-gradient(black, black) padding-box,
+            linear-gradient(to bottom, #C66831, #4f2913) border-box;
+            filter: blur(0.25px);
+            box-sizing: border-box;
+   }
+   .navbarItems {
+      display: flex;
+      flex-direction: row;
+      background: 
+      linear-gradient(black, black) padding-box;
+   }
+   .navbarItem {
+      width: auto;
+      text-align: center; 
+      display: flex;
+   }
+   
+   .hamburgerContainer {
+      display: none;
+   }
+
+   .consultationButton {
+      display: flex;
+      min-width: 140px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      border: 2px solid transparent;
+      background:
+         linear-gradient(black, black) padding-box,
+         linear-gradient(to bottom, #C66831, #4f2913) border-box;
+      filter: blur(0.25px);
+      border-radius:20px;
+      padding: 0.75rem 0.75rem;
+   }
+}
+
+.consultation-text {
+   color: white;
+   text-decoration: none;
+
+   @media screen and (min-width: 1024px) {
+      &:hover {
+         color: orange;
+         text-decoration: none;
+         background:
+            linear-gradient(black, black) padding-box,
+            linear-gradient(to bottom, #C66831, #4f2913) border-box;
+         border-radius: 0.5rem;
+      }
+   }
+}
+
+.mobile-hide {
+   @media screen and (max-width: 1023px) {
+      display: none;
+   }
+}
+
+.mobile-display {
+   @media screen and (max-width: 1023px) {
+      display: flex;
+   }
+}

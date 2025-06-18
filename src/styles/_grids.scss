@@ -1,18 +1,27 @@
+//page sets up grid for the component to use
 @mixin page-grid {
 
     //mobile grid
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, 72px);
+    grid-template-columns: repeat(4, 72px);
     margin: 0 auto;
     gap: 32px;
     width: 100vw;
 
+    //tablet
+    @media ((min-width: 767px) and (max-width: 1023px)) {
+        display: grid;
+        grid-template-columns: repeat(8, 72px);
+        max-width: 799px;
+        margin: 0 auto;
+    }
+
     //small desktop grid
     @media ((min-width: 1024px) and (max-width: 1439px)) {
         display: grid;
-        grid-template-columns: repeat(auto-fit, 72px);
-        max-width: 1024px;
+        grid-template-columns: repeat(10, 72px);
+        max-width: 1008px;
         margin: 0 auto;
     }
 
@@ -20,16 +29,33 @@
     @media (min-width: 1440px) {
         display: grid;
         grid-template-columns: repeat(12, 72px);
-        gap: 32px;
-        max-width: 1440px;
+        max-width: 1216px;
     }
 }
 
+//component uses grid
 @mixin component-grid {
 
+    //use the full grid on mobile
     grid-column: 1 / -1;
 
+    //use 10 out of 12 on desktop standard screens
     @media (min-width: 1440px) {
-        grid-column: span 10;
+        grid-column: 2 / span 10;
     }
+}
+
+@mixin navbar-grid {
+    width: 100%;
+
+    @media ((min-width: 1024px)) {
+        max-width: 1008px;
+    }
+}
+
+//component use sidebar grid
+@mixin component-sidebar-grid {
+
+    //always use a full grid
+    grid-column: 1 / -1;
 }

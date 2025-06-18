@@ -1,40 +1,35 @@
-import React from 'react';
-import styles  from './style.module.scss';
+import React from "react";
+import styles from "./style.module.scss";
+import Image from "next/image";
 
-export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
-  /** How large should the button be? */
-  size?: 'small' | 'medium' | 'large';
-  /** Button contents */
-  label: string;
-  /** Optional click handler */
-  onClick?: () => void;
+export interface UsecaseHeroProps {
+  title: string;
+  authorName: string;
+  authorPosition: string;
+  authorImage?: string;
 }
 
-/** Primary UI component for user interaction */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const UsecaseHero = ({
+  title,
+  authorName,
+  authorPosition,
+  authorImage,
+}: UsecaseHeroProps) => {
   return (
-    <button
-      type="button"
-      className={styles.hero}
-      {...props}
-    >
-      {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
-    </button>
+    <div className={styles["use-case-hero-section"]}>
+      <h1 className={styles["hero-title"]}>{title}</h1>
+      <div className={styles["hero-author-container"]}>
+        <Image
+          className={styles["hero-icon"]}
+          src={authorImage || "/author-icon.svg"}
+          alt="Author icon"
+          width={32}
+          height={32}
+          priority
+        />
+        <p className={styles["hero-author"]}>{authorName}</p>
+        <p className={styles["hero-position"]}>{authorPosition}</p>
+      </div>
+    </div>
   );
 };
