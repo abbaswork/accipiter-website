@@ -17,7 +17,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const Template: Story['render'] = (args) => (
-  <div className="page">
+  <div className="page" style={{background: 'black', height: '100vh', width: '100vw'}}>
     <Navbar {...args} />
   </div>
 );
