@@ -5,44 +5,37 @@
    @include component-grid();
 }
 .cardContainer {
-   display: grid;
-   grid-template-columns: repeat(12, 1fr);
-   grid-template-rows: repeat(3, 1fr);
-   //Just for Testing Purposes:
-   //Make sure to Fix the Dimensions Afterwards
-   width: 50rem;
-   height: 16rem;
+   @include component-grid();
+   display: flex;
+   width: 802px;
+   height: 296px;
    border-radius: 1rem;
-   margin: 2rem auto;
-   padding: 1.56rem 6.25rem 4rem 3.125rem;
    box-sizing: border-box;
    background: 
       url(./background.svg) center / cover no-repeat,
       linear-gradient(#12171D, #12171D) padding-box,
       linear-gradient(to bottom, #C66831, #4f2913) border-box; 
-   border: 2px solid transparent;     
+   border: 2px solid transparent;  
 }
 .progress-ring-container {
    position: relative;
-   width: 192px;
-   height: 192px;
+   width: 172px;
+   height: 172px;
    display: flex;
    align-items: center;
    justify-content: center;
    display:flex;
-   margin: 0.5rem 50rem 0.5rem 0.5rem;
-   display: inline-block;
-   
+   margin: 3.75rem 6.25rem;
  }
 
  
  .progressRingText {
-   font-size: 16px;
+   font-size: 12px;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   color: #fff;
+   color: black;
    pointer-events: none;
    text-align: center;
 
@@ -55,13 +48,9 @@
  }
 
 .cardInteractiveHeader {
-   background: 
-      linear-gradient(black, black) padding-box,
-      linear-gradient(to right, var(--start-color), var(--end-color));
    border: 2px solid transparent;
    color: linear-gradient(to right, #ffffff, #c06620);
    height: 30px;
-   grid-row: 1;
    font-size: 1.5rem;
    border-radius: 20px;
    max-height: 2rem;
@@ -73,8 +62,8 @@
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   gap: 1rem;
    width: 24rem;
+   margin: 1rem 3rem 2rem 0;
 }
 .cardInteractiveHeaderTab {
    margin: auto;
@@ -88,20 +77,15 @@
    margin-left: 0.5rem;
    margin-right: 0.5rem;
    font-size: 12px;
-   background: linear-gradient(-45deg, #C2581B,#E7B772, #C2581B, #994B5C, #C2581B, #E18043);
+   background: linear-gradient(-45deg, #C2581B,#E7B772, #C2581B, #994B5C, #C2581B);
    background-size: 400% 400%;
    background-clip: text;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
-   animation: gradient 10s ease infinite;
+   animation: gradient 5s ease infinite;
 }
 
-.gradientText {
-   background: linear-gradient(to right, #ff7e5f, #feb47b);
-   background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
- }
+
 .cardInteractiveBody {
    margin: 0.5rem;
    color: white;
@@ -109,7 +93,6 @@
    font-size: 16px;
 }
 .cardInteractiveContainer {
-   grid-column: 4 / span 4;
    display: flex;
    flex-direction: column;
    align-items: start;
@@ -119,18 +102,27 @@
    height: 100%;
    border-radius: 20px;
 }
-.progressRingContainer { 
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-}
+
+
 .progressRingPercentage {
    color: white;
    z-index: 1;
-   font-size: 50px;
+   font-size: 30px;
+   font-weight: bold;;
 }
 
+/*
+Needed for Gradient Animation:
+
+.gradientText {
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+ 
+
+*/
  @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -142,3 +134,11 @@
 		background-position: 0% 50%;
 	}  
 }
+
+.gradientText {
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+ 
