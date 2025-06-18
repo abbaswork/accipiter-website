@@ -1,8 +1,8 @@
-'use client';
-import React from 'react';
-import  "./styles.scss";
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import "./styles.scss";
+import Link from "next/link";
+import Image from "next/image";
 
 export interface HamburgerProps {
   onOrOff: boolean;
@@ -15,13 +15,12 @@ export type LinkType = {
 };
 
 let links: LinkType[] = [
-  { label: 'About', url: '/about.com', },
-  { label: 'About', url: '/about.com' },
-  { label: 'About', url: '/about.com' },
-  { label: 'About', url: '/about.com' },
-  { label: 'About', url: '/about.com' }
-]
-
+  { label: "About", url: "/about.com" },
+  { label: "About", url: "/about.com" },
+  { label: "About", url: "/about.com" },
+  { label: "About", url: "/about.com" },
+  { label: "About", url: "/about.com" },
+];
 
 export const Navbar = () => {
   const [mobileDisplay, setMobileDisplay] = React.useState(false);
@@ -35,9 +34,8 @@ export const Navbar = () => {
   }
 
   return (
-
     <div className={"navbar"}>
-      <div className={"navbar-container "}>
+      <div className={"navbar-container"}>
         <NavbarLogo />
         <div className={`navbar-items ${mobileDisplayClass}`}>
           {links?.map((item, index) => (
@@ -45,14 +43,15 @@ export const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <Link className={`mobile-demo navbar-item`} key={links.length + 1} href={"/consultation"}>
+          <Link
+            className={`mobile-demo navbar-item`}
+            key={links.length + 1}
+            href={"/consultation"}
+          >
             {"Consultation"}
           </Link>
         </div>
-        <HamburgerMenu
-          onOrOff={mobileDisplay}
-          setOnOrOff={setMobileDisplay}
-        />
+        <HamburgerMenu onOrOff={mobileDisplay} setOnOrOff={setMobileDisplay} />
         <div className="consultation-button">
           <Link href="/consultation" className={"consultation-text"}>
             Book a Consultation
@@ -63,15 +62,13 @@ export const Navbar = () => {
   );
 };
 
-
 export const NavbarLogo = () => {
   return (
-    <div>
-      <Link href="/" className={"navbarLogo"}>
-        Accipter Tech</Link>
-    </div>
+    <Link href="/" className={"navbar-logo"}>
+      Accipter Tech
+    </Link>
   );
-}
+};
 
 export const HamburgerMenu = ({ onOrOff, setOnOrOff }: HamburgerProps) => {
   return (
@@ -86,5 +83,5 @@ export const HamburgerMenu = ({ onOrOff, setOnOrOff }: HamburgerProps) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};

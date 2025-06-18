@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Radley:ital@0;1&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-.hero-title {
-    font-family: "Radley", serif;
+//set base font for common typography
+h1, h2, h3, h4, h5, h6, p, span, a, li, button {
+    color: white;
+    font-family: "Work Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 48px;
+}
+
+//remove decorations for a
+a {
+    color: inherit;
+    text-decoration: none;
 }
