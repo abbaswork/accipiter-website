@@ -111,3 +111,35 @@
    font-size: 30px;
    font-weight: bold;;
 }
+
+/*
+Needed for Gradient Animation:
+
+.gradientText {
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+ 
+
+*/
+ @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}  
+}
+
+.gradientText {
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+ 
