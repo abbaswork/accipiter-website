@@ -1,0 +1,45 @@
+@use './../../../styles/grids.scss' as *;
+@use './../../../styles/breakpoints' as *;
+
+.hero-section {
+   @include component-grid();
+   padding: 4.5rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2rem;
+   background: black;
+   color: #FFF;
+   text-align: center;
+
+   .hero-title {
+      font-family: 'Radley', sans-serif;
+      font-weight: 400;
+      font-size: 48px;
+      width: 80%;
+   }
+
+   .hero-author-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 0rem;
+
+      p {
+         margin: 0;
+      }
+
+      @include breakpoint(desktop-small) {
+         gap: 1.5rem;
+         flex-direction: row;
+      }
+
+      // .hero-icon {}
+
+      .hero-author {
+         color: #C2581B
+      }
+
+      // .hero-position {}
+   }
+}
