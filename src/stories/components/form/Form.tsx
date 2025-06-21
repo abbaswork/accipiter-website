@@ -101,6 +101,7 @@ export const Form = ({
                 {item.label}
               </a>
             ))}
+
           </div>
 
           {/* Message Input */}

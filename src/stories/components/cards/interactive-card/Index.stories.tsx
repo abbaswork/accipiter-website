@@ -25,7 +25,6 @@ const Template = (args: JSX.IntrinsicAttributes & ReactiveCardProps) => (
 export const Primary: Story = {
   render: Template, // Use the Template for rendering
   args: {
-    headerTabs: ["Headless Migration", "Ai Integration", "Microservices"],
     bodyText: ["string 1", "string 2", "string 3"],
     seoText: [
       "Increase in SEO",

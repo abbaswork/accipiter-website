@@ -1,72 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './style.module.scss';
 
-export interface CardProps {
-  heroText?: string;
-  subText?: string;
-  authorText?: string;
-  index?: number;
-}
+const cardsData = [
+  { id: 'a', heroText: '<b>Card A</b> Hero Text', subText: 'Subtitle A', authorText: 'Author A' },
+  { id: 'b', heroText: '<b>Card B</b> Hero Text', subText: 'Subtitle B', authorText: 'Author B' },
+  { id: 'c', heroText: '<b>Card C</b> Hero Text', subText: 'Subtitle C', authorText: 'Author C' },
+];
 
-export const ReviewCards = ({heroText, subText,  authorText}: CardProps) => {
+export const Carousel = () => {
+  const [cards, setCards] = useState(cardsData);
+  const [isAnimating, setIsAnimating] = useState(false);
 
+  useEffect(() => {
+    //Because this is non-ending, we use interval rather than timeout.
+    const interval = setInterval(() => {
+      //For animation effect.
+      setIsAnimating(true);
+      
+      setTimeout(() => {
+        setCards((prev) => {
+          //Essentially, what's happening here.
+          //We take the first card, seperate it from the array.
+          //Then we move the first card to the end of the array.
+          //In a pattern, it's like abc, bca, cab, abc.
+          const [first, ...rest] = prev;
+          return [...rest, first];
+        });
+      }, 1500); 
+      setIsAnimating(false);
+    }, 5000);
 
-
-return (<div className={styles.reviewCardsContainer}>
-<ReviewCard 
- heroText={'<b>Sample G</b> Normal Text'}
- subText={subText}
- authorText={authorText}
- index={0} ></ReviewCard>
-
-<ReviewCard 
-index={1}
- heroText={heroText}
- subText={subText}
- authorText={authorText}
- ></ReviewCard>
-
-<ReviewCard 
- heroText={heroText}
- subText={subText}
- authorText={authorText}
- index={2}></ReviewCard>
-</div>
-)
-
-
-}
-
-export const ReviewCard = ({ heroText, subText, authorText, index }: CardProps) => {
-//Just little index's to differentiate which one is which card.
-  let cardClass = styles.centerCard;
-
-if (index === 0) {
-  cardClass = styles.leftCardReviewTemplate;
-} else if (index === 1) {
-  cardClass = styles.centerCardReviewTemplate;
-} else if (index === 2) {
-  cardClass = styles.rightCardReviewTemplate;
-} 
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className={`${styles.cardReviewTemplate} ${cardClass}`}>
-      <div className={styles.headerText}>
-        <a>
-          {heroText ? (
-            <span
-              // Renders HTML from heroText string
-              dangerouslySetInnerHTML={{ __html: heroText }}
-            />
-          ) : null}
-        </a>
-      </div>
-      <div className={styles.bottomText}>
-        <a>
-          <strong>  {subText} </strong>
-        </a>
-        <a style={{ color: "#D4D4d8", marginTop: "5px", fontSize: "14px" }} >{authorText}</a>
-      </div>
+    <div className={`${styles.carouselContainer} ${isAnimating ? styles.animating : ''}`}>
+      {cards.map((card, index) => {
+        let positionClass = '';
+        if (index === 0) positionClass = styles.leftCard;
+        else if (index === 1) positionClass = styles.centerCard;
+        else if (index === 2) positionClass = styles.rightCard;
+
+        return (
+          <div key={card.id} className={`${styles.card} ${positionClass}`}>
+            <div dangerouslySetInnerHTML={{ __html: card.heroText }} />
+            <div>{card.subText}</div>
+            <div>{card.authorText}</div>
+          </div>
+        );
+      })}
     </div>
   );
 };
