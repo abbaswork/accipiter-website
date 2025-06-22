@@ -29,22 +29,24 @@ export const Hero = ({
 
       {cta && <PrimaryCTA link={cta.href} label={cta.label} />}
 
-      <div className={styles["logo-section"]}>
-        {logoSectionTitle && (
-          <h3 className={styles["logo-section-title"]}>{logoSectionTitle}</h3>
-        )}
-        {logoBarImage && (
-          <Image
-            className={styles["logo-bar"]}
-            src={logoBarImage}
-            alt="Logo bar"
-            width={488}
-            height={0}
-            style={{ height: "auto" }}
-            priority
-          />
-        )}
-      </div>
+      {logoBarImage && (
+        <div className={styles["logo-section"]}>
+          {logoSectionTitle && (
+            <h3 className={styles["logo-section-title"]}>{logoSectionTitle}</h3>
+          )}
+          {logoBarImage && (
+            <Image
+              className={styles["logo-bar"]}
+              src={logoBarImage}
+              alt="Logo bar"
+              width={488}
+              height={0}
+              style={{ height: "auto", maxWidth: "100vw" }}
+              priority
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 };
