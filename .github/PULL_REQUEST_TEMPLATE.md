@@ -2,39 +2,18 @@
 
 Please review and check all that apply before requesting a review:
 
+The goal is to ensure the work is ready for QA, Design Review and can easily fulfill the acceptance criteria.
+
 - [ ] Fulfills Acceptance Criteria
-- [ ] SCSS classes use dash case (e.g. `navbar-container`)
-- [ ] SCSS classes follow mobile first → layout → styles → and desktop media queries
-- [ ] All unused SCSS classes removed
-- [ ] All unused variables/propTypes removed
-- [ ] All Console Logs removed
-- [ ] Working on Mobile
-- [ ] Working on Desktop
-- [ ] PropTypes and Integration
-- [ ] Components/Services encapsulated
+- [ ] SCSS classes use dash case (e.g. styes[`navbar-container`]) with css modules
+- [ ] Mobile First Design
+- [ ] All unused SCSS classes, variables, types and console logs removed
+- [ ] Storybook + type Integration Ready
+- [ ] Mobile/Desktop QA Ready
+- [ ] All unused SCSS classes, variables, types and console logs removed
 
 ---
 
-**Describe your changes:**
-<!-- Describe changes in bullet points, ex.-->
-
-Setup work for use case page:
-- Page styles (typography, grid)
-- sidebar layout with sidebar component
-
 **Acceptance Criteria:**
-<!-- Setup Acceptance criteria, ex.-->
+<!-- Describe the requirments/objective of this component in bullet form -->
 
-Use Case Page Layout:
-- Page Grid
-- Sidebar Layout
-
-Sidebar Component used in layout with integration:
-- Title Section
-- Tech Section
-- Challenge Section
-- Solution Section
-- Outcome Section
-- CTA Section
-
-Footer Component used in layout with integration:
