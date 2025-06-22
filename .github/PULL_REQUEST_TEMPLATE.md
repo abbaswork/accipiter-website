@@ -10,7 +10,7 @@ The goal is to ensure the work is ready for QA, Design Review and can easily ful
 - [ ] Above the fold / Below the fold optimization
 - [ ] Using NextJs Image + Link Components
 - [ ] All unused SCSS classes, variables, types and console logs removed
-- [ ] Storybook: const export args, conditional prop types + logic
+- [ ] Storybook: setup args, conditional prop types + logic
 - [ ] Mobile/Desktop QA Ready
 - [ ] All unused SCSS classes, variables, types and console logs removed
 
