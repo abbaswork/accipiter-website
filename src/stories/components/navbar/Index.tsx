@@ -14,15 +14,13 @@ export type LinkType = {
   url: string;
 };
 
-let links: LinkType[] = [
-  { label: "About", url: "/about.com" },
-  { label: "About", url: "/about.com" },
-  { label: "About", url: "/about.com" },
-  { label: "About", url: "/about.com" },
-  { label: "About", url: "/about.com" },
-];
+interface NavbarProps {
+  links: LinkType[];
+  cta: {label: string; url: string};
+}
 
-export const Navbar = () => {
+export const Navbar = ({ links, cta }: NavbarProps) => {
+
   const [mobileDisplay, setMobileDisplay] = React.useState(false);
 
   //State to track the visibility of the navbar on mobile only
@@ -46,15 +44,15 @@ export const Navbar = () => {
           <Link
             className={`mobile-demo navbar-item`}
             key={links.length + 1}
-            href={"/consultation"}
+            href={cta.url}
           >
-            {"Consultation"}
+            {cta.label}
           </Link>
         </div>
         <HamburgerMenu onOrOff={mobileDisplay} setOnOrOff={setMobileDisplay} />
         <div className="consultation-button">
-          <Link href="/consultation" className={"consultation-text"}>
-            Book a Consultation
+          <Link href={cta.url} className={"consultation-text"}>
+            {cta.label}
           </Link>
         </div>
       </div>
