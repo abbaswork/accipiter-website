@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "./style.scss";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { Form } from "./Form";
 
 export type FormFields = {
@@ -14,8 +14,8 @@ export type FormFields = {
 
 export interface FormProps {
   formData: FormFields;
-  onSubmit?: (data: any) => void;
-  onChange?: (data: any) => void;
+  onSubmit?: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
   formMessage?: string;
 }
 export const HubSpotForm = () => {
@@ -78,7 +78,7 @@ export const HubSpotForm = () => {
       });
       console.log("Response: ", response);
       return response.data;
-    } catch (err: unknown | AxiosError) {
+    } catch (err: unknown) {
       //Potentially causing errors, as there's no error handling. It'd kinda just loop itself constantly/crash.
       if (axios.isAxiosError(err)) {
         if (err.status === 404) {
@@ -113,7 +113,9 @@ export const HubSpotForm = () => {
         message: "",
         services: "",
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log("Error submitting form:", error);
+    }
   };
   return (
     <div className="section" style={{paddingTop: "2rem"}}>

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import { Footer, FooterProps } from './Index'; // Make sure this path is correct
 import './../../../styles/pages/global.scss';
 import { JSX } from 'react';

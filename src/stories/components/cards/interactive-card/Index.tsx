@@ -54,7 +54,7 @@ export const ReactiveCard = ({ tabs, sectionTitle }: ReactiveCardProps) => {
     }
     //cleanup function that runs when the component unmounts or when progress changes
     return () => clearTimeout(timer);
-  }, [progress, activeIndex]);
+  }, [progress, activeIndex, tabs]);
 
   return (
     <div className="section">

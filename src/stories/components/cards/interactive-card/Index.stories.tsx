@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ReactiveCard, ReactiveCardProps, ProgressRingProps } from "./Index"; // Make sure this path is correct
+import { ReactiveCard, ReactiveCardProps } from "./Index"; // Make sure this path is correct
 import "@/styles/pages/global.scss";
 import { JSX } from "react";
 

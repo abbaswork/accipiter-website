@@ -3,10 +3,6 @@ import styles from './style.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export interface FooterProps {
-
-}
-
 const links = [
   { label: 'Contact Us', url: '/contact' },
   { label: 'Privacy Policy', url: '/privacy' },

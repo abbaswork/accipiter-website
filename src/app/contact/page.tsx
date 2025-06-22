@@ -1,6 +1,4 @@
-import { UsecaseHero } from "@/stories/components/usecase-hero/Index";
 import { Hero } from "@/stories/components/hero/Index";
-import { HeroStory } from "@/stories/components/hero/Index.stories";
 import { HubSpotForm } from "@/stories/components/form/Index";
 
 const HeroArgs = {

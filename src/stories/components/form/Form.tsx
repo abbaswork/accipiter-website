@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./style.scss";
 import Image from "next/image";
 import { FormFields, FormProps } from "./Index";
@@ -30,8 +30,6 @@ export const Form = ({
   } else {
     visibleOrHiddden = "form-hidden";
   }
-
-  let service = "";
 
   const handleService = (e: React.MouseEvent<HTMLAnchorElement>): void => {
     setServices(e.currentTarget.textContent || "");

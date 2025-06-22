@@ -71,7 +71,7 @@ export const NavbarLogo = () => {
 export const HamburgerMenu = ({ onOrOff, setOnOrOff }: HamburgerProps) => {
   return (
     <div className={"hamburger-container"}>
-      <div className={"navbar-hamburger"} onClick={(e) => setOnOrOff(!onOrOff)}>
+      <div className={"navbar-hamburger"} onClick={() => setOnOrOff(!onOrOff)}>
         <Image
           className={"navbar-hamburger"}
           src="/hamburger.svg"

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import styles from "./layout.module.scss";
 import "@/app/globals.scss";
 import { SnapshotCard } from "@/stories/components/cards/snapshot-card/Index";
