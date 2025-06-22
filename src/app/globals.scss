@@ -4,6 +4,12 @@
 
 body.page-body {
   @include page-grid();
+  font-family: "Work Sans", sans-serif;
   background: black;
   padding-top: 4rem;
+
+  .section {
+    @include component-grid();
+    padding-top: 5rem;
+  }
 }
