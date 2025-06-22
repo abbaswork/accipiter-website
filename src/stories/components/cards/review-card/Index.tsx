@@ -2,39 +2,29 @@ import React, { useState, useEffect } from 'react';
 import styles from './style.module.scss';
 
 const cardsData = [
-  { id: 'a', heroText: '<b>Card A</b> Hero Text', subText: 'Subtitle A', authorText: 'Author A' },
-  { id: 'b', heroText: '<b>Card B</b> Hero Text', subText: 'Subtitle B', authorText: 'Author B' },
-  { id: 'c', heroText: '<b>Card C</b> Hero Text', subText: 'Subtitle C', authorText: 'Author C' },
+  { id: 'a', heroText: 'Professional, reliable, and <b>security-focused</b>. Their expertise <b>transformed</b> our app!', subText: 'Sadia Asad', authorText: 'Branch Manager at CPR' },
+  { id: 'b', heroText: 'We couldn’t have <b>navigated</b> headless migration without their <b>clear guidance</b> and insight.', subText: 'Allia Hussein', authorText: 'Founder of Mansion 28' },
+  { id: 'c', heroText: 'The <b>growth</b> to SEO and page performance was <b>phenomenal!</b>', subText: 'Ikra Khan', authorText: 'Content Specalist at METRIC GAMER' },
 ];
 
 export const Carousel = () => {
   const [cards, setCards] = useState(cardsData);
-  const [isAnimating, setIsAnimating] = useState(false);
+
 
   useEffect(() => {
-    //Because this is non-ending, we use interval rather than timeout.
     const interval = setInterval(() => {
-      //For animation effect.
-      setIsAnimating(true);
-      
-      setTimeout(() => {
-        setCards((prev) => {
-          //Essentially, what's happening here.
-          //We take the first card, seperate it from the array.
-          //Then we move the first card to the end of the array.
-          //In a pattern, it's like abc, bca, cab, abc.
-          const [first, ...rest] = prev;
-          return [...rest, first];
-        });
-      }, 1500); 
-      setIsAnimating(false);
+        setTimeout(() => {
+          setCards((prev) => {
+            const [first, ...rest] = prev;
+            return [...rest, first];
+          });
+        }, 2000);
     }, 5000);
-
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className={`${styles.carouselContainer} ${isAnimating ? styles.animating : ''}`}>
+    <div className={styles.carouselContainer}>
       {cards.map((card, index) => {
         let positionClass = '';
         if (index === 0) positionClass = styles.leftCard;
@@ -43,9 +33,9 @@ export const Carousel = () => {
 
         return (
           <div key={card.id} className={`${styles.card} ${positionClass}`}>
-            <div dangerouslySetInnerHTML={{ __html: card.heroText }} />
-            <div>{card.subText}</div>
-            <div>{card.authorText}</div>
+            <div className={styles['header-text']} dangerouslySetInnerHTML={{ __html: card.heroText }} />
+            <div className={styles['sub-text']}>{card.subText}</div>
+            <div className={styles['author-text']}>{card.authorText}</div>
           </div>
         );
       })}
