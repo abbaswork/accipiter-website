@@ -1,0 +1,65 @@
+@use './../../../styles/grids.scss' as *;
+@use './../../../styles/breakpoints' as *;
+@use './../../../styles/effects' as *;
+
+.hero-section {
+   @include component-grid();
+   padding: 1rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1.25rem;
+   background: black;
+   color: #FFF;
+   text-align: center;
+
+   @include breakpoint(desktop-small) {
+      gap: 2.5rem;
+      padding: 4.5rem;
+   }
+
+   .hero-title,
+   .hero-title span {
+      font-family: 'Radley', sans-serif;
+      font-weight: 400;
+      font-size: 40px;
+      width: 100%;
+
+      @include breakpoint(desktop-small) {
+         font-size: 48px;
+      }
+   }
+
+   .hero-title span {
+      @include gradient-text();
+   }
+
+   .hero-subtitle {
+      width: 100%;
+      font-weight: 300;
+      font-size: 18px;
+      font-family: 'Work Sans';
+      padding-bottom: .5rem;
+
+      @include breakpoint(desktop-small) {
+         font-size: 20px;
+      }
+   }
+
+   .hero-title,
+   .hero-subtitle {
+      margin: 0;
+
+      @include breakpoint(desktop-small) {
+         width: 65%;
+      }
+   }
+
+   .logo-section {
+       padding-top: 1rem;
+
+      .logo-section-title {
+         font-family: 'Radley', sans-serif;
+      }
+   }
+}
