@@ -10,7 +10,6 @@
       linear-gradient(#12171D, #12171D) padding-box,
       linear-gradient(to bottom, #C66831, #4f2913) border-box; 
    border: 2px solid transparent;
-   @include component-grid();  
 
    .cardComponent {
       min-width: 70vw;

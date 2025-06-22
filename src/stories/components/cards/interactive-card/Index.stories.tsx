@@ -20,6 +20,7 @@ const Template = (args: JSX.IntrinsicAttributes & ReactiveCardProps) => (
 export const InteractiveCardStory: Story = {
   render: Template, // Use the Template for rendering
   args: {
+    sectionTitle: "Use Cases",
     tabs: [
       {
         headerText: "Headless Migration",

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useEffect } from "react";
 import styles from "./style.module.scss";
 import { ProgressRing } from "./ProgressRing";
@@ -9,6 +9,7 @@ export interface ProgressRingProps {
 }
 
 export interface ReactiveCardProps {
+  sectionTitle?: string;
   tabs: {
     headerText: string;
     progress: number;
@@ -17,7 +18,7 @@ export interface ReactiveCardProps {
   }[];
 }
 
-export const ReactiveCard = ({ tabs }: ReactiveCardProps) => {
+export const ReactiveCard = ({ tabs, sectionTitle }: ReactiveCardProps) => {
   const [progress, setProgress] = React.useState(0);
   const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -56,32 +57,35 @@ export const ReactiveCard = ({ tabs }: ReactiveCardProps) => {
   }, [progress, activeIndex]);
 
   return (
-    <div className={styles.cardContainer}>
-      <div className={styles.cardComponent}>
-        <ProgressRing
-          progress={progress}
-          seoText={tabs[activeIndex].metric}
-          activeIndex={activeIndex}
-        />
+    <div className="section">
+      {sectionTitle && <h2 className="section-header">{sectionTitle}</h2>}
+      <div className={styles.cardContainer}>
+        <div className={styles.cardComponent}>
+          <ProgressRing
+            progress={progress}
+            seoText={tabs[activeIndex].metric}
+            activeIndex={activeIndex}
+          />
 
-        <div className={styles.cardInteractiveContainer}>
-          <div className={styles.cardInteractiveHeader}>
-            <span className={styles.cardInteractiveHeaderTabs}>
-              {tabs.map((item, index) => (
-                <span
-                  key={index}
-                  className={`${styles.cardInteractiveHeaderTab} ${
-                    activeIndex === index ? styles.activeTab : ""
-                  }`}
-                  onClick={() => handleTabClick(index)}
-                >
-                  {item.headerText}
-                </span>
-              ))}
-            </span>
-          </div>
-          <div className={styles.cardInteractiveBody}>
-            <a>{tabs[activeIndex].content}</a>
+          <div className={styles.cardInteractiveContainer}>
+            <div className={styles.cardInteractiveHeader}>
+              <span className={styles.cardInteractiveHeaderTabs}>
+                {tabs.map((item, index) => (
+                  <span
+                    key={index}
+                    className={`${styles.cardInteractiveHeaderTab} ${
+                      activeIndex === index ? styles.activeTab : ""
+                    }`}
+                    onClick={() => handleTabClick(index)}
+                  >
+                    {item.headerText}
+                  </span>
+                ))}
+              </span>
+            </div>
+            <div className={styles.cardInteractiveBody}>
+              <a>{tabs[activeIndex].content}</a>
+            </div>
           </div>
         </div>
       </div>

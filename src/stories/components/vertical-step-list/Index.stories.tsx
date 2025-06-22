@@ -29,6 +29,7 @@ const Template = (args: JSX.IntrinsicAttributes & VerticalStepListProps) => (
 export const VerticalStepListStory: Story = {
   render: Template,
   args: {
+    sectionTitle: "Our Approach",
     steps: [
       { headerText: "Phased Migration", subheaderText: "Accipiter Tech’s phased migration approach minimizes downtime and risk by breaking projects into manageable stages. This ensures both business continuity thorough testing, and seamless transition so your team stays productive and your value is preserved every step of the way." },
       { headerText: "Rollback Strategies", subheaderText: "Accipiter Tech builds every headless migration with robust rollback strategies, so you can instantly revert to previous versions if needed. This safety net means any content or system change can be undone with minimal disruption, giving you full confidence to innovate without risk." },

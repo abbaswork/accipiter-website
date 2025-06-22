@@ -16,6 +16,7 @@
    @include breakpoint(desktop-small) {
       gap: 2.5rem;
       padding: 4.5rem;
+      padding-bottom: 0rem;
    }
 
    .hero-title,
