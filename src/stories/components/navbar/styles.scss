@@ -43,8 +43,8 @@
 
    .navbar-logo {
       color: white;
-     font-family: 'Radley', sans-serif;
-     font-size: 1rem;
+      font-family: 'Radley', sans-serif;
+      font-size: 1rem;
    }
 }
 
@@ -85,9 +85,11 @@
 }
 
 .navbar-item:hover {
-   color: #C2581B;
-   text-decoration: none;
-   border-bottom: 1px solid #C2581B;
+   @include breakpoint(desktop-small) {
+      color: #C2581B;
+      text-decoration: none;
+      border-bottom: 1px solid #C2581B;
+   }
 }
 
 .navbar-items {

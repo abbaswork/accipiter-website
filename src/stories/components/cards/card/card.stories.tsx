@@ -28,13 +28,8 @@ export const Primary: Story = {
     cards: [
       {
         headerText: "Metric Gamer",
-        subHeaderText: "Increasing SEO through AI automation.",
+        subHeaderText: "Coming Soon",
         cardType: "Metric Gamer",
-      },
-      {
-        headerText: "Metric Gamer",
-        subHeaderText: "Increasing SEO through AI automation.",
-        cardType: "Syrian Foundation",
       },
     ],
   },
