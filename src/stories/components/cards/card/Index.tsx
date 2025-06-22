@@ -19,7 +19,7 @@ export const CardRow = ({ cards, sectionTitle }: CardRowProps) => {
       {sectionTitle && <h2 className="section-header">{sectionTitle}</h2>}
       <div className={styles["card-row"]}>
         {cards.map((card, index) => (
-          <Card {...card} />
+          <Card key={index} {...card} />
         ))}
       </div>
     </div>
