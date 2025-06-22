@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Hero, HeroProps } from './Index'; // Make sure this path is correct
-import './../../../styles/pages/global.scss';
-import { JSX } from 'react';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Hero, HeroProps } from "./Index"; // Make sure this path is correct
+import "./../../../styles/pages/global.scss";
+import { JSX } from "react";
 
 const meta = {
-  title: 'Hero/Hero',
+  title: "Hero/Hero",
   component: Hero,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
 } satisfies Meta<typeof Hero>;
 
@@ -23,7 +23,13 @@ const Template = (args: JSX.IntrinsicAttributes & HeroProps) => (
 export const Primary: Story = {
   render: Template, // Use the Template for rendering
   args: {
-    title: 'Use Case Hero Title with <span> Gradient </span> Text',
-    logoBarImage: '/logo-bar.svg',
+    title: "Legacy <span>Reimagined</span>,\nFuture-Proofed",
+    subtitle: "Seamless headless migrations, AI-optimized ecosystems, and enterprise resilience. ",
+    logoSectionTitle: "Our Tech Stack",
+    logoBarImage: "/logo-bar.svg",
+    cta: {
+      "label": "Book a Consultation",
+      "href": "https://example.com/get-started"
+    },
   },
 };
