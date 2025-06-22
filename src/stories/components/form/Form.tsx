@@ -50,8 +50,8 @@ export const Form = ({
       {/* The Three Input Fields */}
 
       <div className={"form-content"}>
-        {formFields.map((item) => (
-          <div className={"form-item"}>
+        {formFields.map((item, index) => (
+          <div key={"field-" + index} className={"form-item"}>
             <label className={`${"form-label"}  ${"gradient-text"}`}>
               {item.label}
             </label>
@@ -95,28 +95,29 @@ export const Form = ({
             <a>{services}</a>
           </div>
           <div className={"form-select-container " + visibleOrHiddden}>
-            {formSelectableFields.map((item) => (
-              <a className={"form-select"} onClick={handleService}>
+            {formSelectableFields.map((item, index) => (
+              <a
+                key={"select-" + index}
+                className={"form-select"}
+                onClick={handleService}
+              >
                 {" "}
                 {item.label}
               </a>
             ))}
-
           </div>
 
           {/* Message Input */}
         </div>
       </div>
-      <form className={"form-message-item"}>
-        <label className={`$ {'form-label'}  ${"gradient-text"}`}>
-          Message
-        </label>
+      <div className={"form-message-item"}>
+        <label className="form-label gradient-text">Message</label>
         <textarea
           name="message"
           onChange={onChange}
-          className={`$'{form-textarea'} ${"form-input"}`}
+          className='form-textarea form-input'
         />
-      </form>
+      </div>
       <div className={"form-button-container"}>
         <button className={"form-button"} type="submit">
           Submit
