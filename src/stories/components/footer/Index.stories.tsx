@@ -30,11 +30,11 @@ export const Primary: Story = {
       { label: 'Privacy Policy', url: '/privacy' },
     ],
     socialLinks: [
-      { label: 'Facebook', url: 'https://facebook.com' },
-      { label: 'Twitter', url: 'https://twitter.com' },
-      { label: 'LinkedIn', url: 'https://linkedin.com' },
+      { label: 'Facebook', url: "#" },
+      { label: 'Twitter', url: "#" },
+      { label: 'LinkedIn', url: "#" },
       // { label: 'GitHub', url: 'https://github.com' },
-      { label: 'Instagram', url: 'https://instagram.com' },
+      { label: 'Instagram', url: "#" },
     ],
     logo: {
       src: '/logo.svg',
