@@ -17,7 +17,7 @@ const Template = (args: JSX.IntrinsicAttributes & ReactiveCardProps) => (
   </div>
 );
 
-export const Primary: Story = {
+export const InteractiveCardStory: Story = {
   render: Template, // Use the Template for rendering
   args: {
     tabs: [

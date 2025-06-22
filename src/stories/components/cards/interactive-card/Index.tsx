@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+'use client';
+import React, { useEffect } from "react";
 import styles from "./style.module.scss";
 import { ProgressRing } from "./ProgressRing";
 
