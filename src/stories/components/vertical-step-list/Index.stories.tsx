@@ -36,6 +36,5 @@ export const VerticalStepListStory: Story = {
       { headerText: "Change Management", subheaderText: "Our structured change management process keeps your team engaged and confident throughout any transformation. With clear communication, hands-on training, and ongoing support, we ensure new systems are adopted smoothly and your team are set up to thrive." },
        { headerText: "Security By Design", subheaderText: "Security is built into every layer from the start. We embed best practices, strict access controls, and continuous monitoring throughout development, proactively protecting your data and reputation while meeting compliance requirements—so you can innovate with confidence." },
     ],
-    onClick: fn(),
   },
 };

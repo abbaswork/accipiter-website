@@ -9,6 +9,7 @@ export interface HeroProps {
   logoBarImage?: string;
   logoSectionTitle?: string;
   cta?: { label: string; href: string };
+  style?: React.CSSProperties;
 }
 
 export const Hero = ({
@@ -17,9 +18,10 @@ export const Hero = ({
   subtitle,
   logoSectionTitle,
   cta,
+  style,
 }: HeroProps) => {
   return (
-    <div className={styles["hero-section"]}>
+    <div className={styles["hero-section"]} style={style}>
       <h1
         className={styles["hero-title"]}
         dangerouslySetInnerHTML={{ __html: title }}
@@ -39,7 +41,7 @@ export const Hero = ({
               className={styles["logo-bar"]}
               src={logoBarImage}
               alt="Logo bar"
-              width={488}
+              width={580}
               height={0}
               style={{ height: "auto", maxWidth: "100vw" }}
               priority

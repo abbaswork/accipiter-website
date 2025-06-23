@@ -15,10 +15,15 @@ export type FormFields = {
 export interface FormProps {
   formData: FormFields;
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  onChange?: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
   formMessage?: string;
 }
-export const HubSpotForm = () => {
+
+export const HubSpotForm = ({ style }: { style?: React.CSSProperties }) => {
   const [formData, setFormData] = useState({
     firstname: "",
     website: "",
@@ -118,7 +123,7 @@ export const HubSpotForm = () => {
     }
   };
   return (
-    <div className="section" style={{paddingTop: "2rem"}}>
+    <div className="section" style={{ paddingTop: "0rem", ...style }}>
       {/* {sectionTitle && <h2 className="section-header">{sectionTitle}</h2>} */}
       <Form
         onSubmit={handleSubmit}

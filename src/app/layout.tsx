@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/stories/components/navbar/Index";
 import { Primary as NavbarArgs } from "@/stories/components/navbar/Index.stories";
-import "@/app/globals.scss";
 import { Footer } from "@/stories/components/footer/Index";
-import {Primary as FooterArgs } from "@/stories/components/footer/Index.stories";
+import { Primary as FooterArgs } from "@/stories/components/footer/Index.stories";
+import "@/app/globals.scss";
 
 export const metadata: Metadata = {
   title: "Create Next App",

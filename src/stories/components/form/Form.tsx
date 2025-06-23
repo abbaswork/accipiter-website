@@ -12,17 +12,18 @@ export const Form = ({
   const [visible, setVisible] = React.useState<boolean>(false);
   const [services, setServices] = React.useState<string>("");
   const formFields = [
-    { label: "First Name", type: "text", maxlength: 10, name: "firstname" },
-    { label: "Website", type: "text", maxlength: 10, name: "website" },
+    { label: "Name", type: "text", maxlength: 50, name: "firstname" },
+    { label: "Website", type: "text", maxlength: 100, name: "website" },
     { label: "Email", type: "email", maxlength: 100, name: "email" },
   ];
+
   const formSelectableFields = [
-    { label: "Sample 1", type: "text" },
-    { label: "Sample 2", type: "text" },
-    { label: "Sample 3", type: "text" },
-    { label: "Sample 4", type: "text" },
-    { label: "Sample 5", type: "text" },
+    { label: "Headless Migration", type: "text" },
+    { label: "Microservices", type: "text" },
+    { label: "AI Automation", type: "text" },
+    { label: "Other", type: "text" },
   ];
+
   let visibleOrHiddden = "form-hidden";
 
   if (visible) {

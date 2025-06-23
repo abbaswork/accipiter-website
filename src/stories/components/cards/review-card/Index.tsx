@@ -30,7 +30,7 @@ export const Carousel = ({ sectionTitle, cardsData }: CarouselProps) => {
   return (
     <div className="section">
       {sectionTitle && (
-        <h2 className="section-header">Checkout our testimonials</h2>
+        <h2 className="section-header">{sectionTitle}</h2>
       )}
       <div className={styles.carouselContainer}>
         {cards.map((card, index) => {

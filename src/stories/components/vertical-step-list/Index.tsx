@@ -8,14 +8,16 @@ export interface VerticalStepListProps {
     subheaderText: string;
   }[];
   onClick?: () => void;
+  style?:  React.CSSProperties;
 }
 
 export const VerticalStepList = ({
   steps,
   sectionTitle,
+  style
 }: VerticalStepListProps) => {
   return (
-    <div className="section">
+    <div className="section" style={style}>
       {sectionTitle && <h2 className="section-header">{sectionTitle}</h2>}
       <div className={styles["vertical-step-list-container"]}>
         {steps.map((step, index) => (
@@ -29,7 +31,7 @@ export const VerticalStepList = ({
               <div className={styles["vertical-step-list-header"]}>
                 <b>{step.headerText}</b>
                 <div className={styles["vertical-step-list-header-subtitle"]}>
-                  <a>{step.subheaderText}</a>
+                  <a className={styles["subheader-text"]}>{step.subheaderText}</a>
                 </div>
               </div>
             </div>
