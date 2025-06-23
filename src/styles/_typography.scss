@@ -30,19 +30,24 @@ a {
     margin: 0;
     padding: 0;
     padding-bottom: 4rem;
-    position: relative;
-    z-index: 1;
+}
 
-    &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: -35%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80vw;
-        height: 2px;
-         background: linear-gradient(to bottom, #C66831, #4f2913);
-        z-index: -1;
+.section.split {
+    .section-header {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -35%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 2px;
+            background: linear-gradient(to bottom, #C66831, #4f2913);
+            z-index: -1;
+        }
     }
 }

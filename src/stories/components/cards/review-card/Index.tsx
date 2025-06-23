@@ -10,9 +10,10 @@ export interface CarouselProps {
     subText: string;
     authorText: string;
   }[];
+  className?: string;
 }
 
-export const Carousel = ({ sectionTitle, cardsData }: CarouselProps) => {
+export const Carousel = ({ sectionTitle, cardsData, className }: CarouselProps) => {
   const [cards, setCards] = useState(cardsData);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export const Carousel = ({ sectionTitle, cardsData }: CarouselProps) => {
   }, []);
 
   return (
-    <div className="section">
+    <div className={"section " + className}>
       {sectionTitle && (
         <h2 className="section-header">{sectionTitle}</h2>
       )}

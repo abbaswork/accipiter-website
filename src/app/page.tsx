@@ -15,10 +15,10 @@ export default function Home() {
   return (
     <>
       <Hero {...HeroArgs} />
-      <ReactiveCard {...ourUseCasesArgs} />
       <VerticalStepList {...ourApproachArgs} style={{ paddingTop: "0rem" }} />
-      <Carousel {...ourTestimonialsArgs} />
-      <CardRow {...ourCaseStudiesArgs} />
+      <ReactiveCard {...ourUseCasesArgs} />
+      <Carousel {...ourTestimonialsArgs} className="split"/>
+      <CardRow {...ourCaseStudiesArgs} className="split"/>
     </>
   );
 }
