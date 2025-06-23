@@ -12,10 +12,13 @@
    background: black;
    color: #FFF;
    text-align: center;
+   margin-top: 4.5rem;
 
    @include breakpoint(desktop-small) {
       gap: 2.5rem;
-      padding: 4.5rem;
+      margin-top: 9rem;
+      height: 80vh;
+      padding-bottom: 0rem;
    }
 
    .hero-title,
@@ -56,7 +59,7 @@
    }
 
    .logo-section {
-       padding-top: 1rem;
+      padding-top: 1rem;
 
       .logo-section-title {
          font-family: 'Radley', sans-serif;

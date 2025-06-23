@@ -1,5 +1,4 @@
 @use './../../../../styles/grids.scss' as *;
-@use './../../../../styles/typography.scss' as *;
 
 .cardContainer {
    width: fit-content;
@@ -10,7 +9,7 @@
       url(./background.svg) center / cover no-repeat,
       linear-gradient(#12171D, #12171D) padding-box,
       linear-gradient(to bottom, #C66831, #4f2913) border-box; 
-   border: 2px solid transparent;  
+   border: 2px solid transparent;
 
    .cardComponent {
       min-width: 70vw;
@@ -103,7 +102,7 @@
    color: white;
    display: flex;
    font-size: 16px;
-   text-align: center;
+   text-align: left;
 }
 .cardInteractiveContainer {
    display: flex;
@@ -116,6 +115,7 @@
    border-radius: 20px;
 
    @media screen and (min-width: 1024px) {
+      gap: 0rem;
       align-items: start;
    }
 }

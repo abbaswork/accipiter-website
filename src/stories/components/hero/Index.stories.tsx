@@ -20,16 +20,17 @@ const Template = (args: JSX.IntrinsicAttributes & HeroProps) => (
   </div>
 );
 
-export const Primary: Story = {
+export const HeroStory: Story = {
   render: Template, // Use the Template for rendering
   args: {
     title: "Legacy <span>Reimagined</span>,\nFuture-Proofed",
-    subtitle: "Seamless headless migrations, AI-optimized ecosystems, and enterprise resilience. ",
+    subtitle:
+      "Seamless headless migrations, AI-optimized ecosystems, and enterprise resilience. ",
     logoSectionTitle: "Our Tech Stack",
     logoBarImage: "/logo-bar.svg",
     cta: {
-      "label": "Book a Consultation",
-      "href": "https://example.com/get-started"
+      label: "Book a Consultation",
+      href: "https://example.com/get-started",
     },
   },
 };

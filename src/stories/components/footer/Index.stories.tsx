@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import { Footer, FooterProps } from './Index'; // Make sure this path is correct
 import './../../../styles/pages/global.scss';
 import { JSX } from 'react';
@@ -26,15 +25,15 @@ export const Primary: Story = {
   args: {
     links: [
       { label: 'Contact Us', url: '/contact' },
+      { label: 'About', url: '/about' },
       { label: 'Privacy Policy', url: '/privacy' },
-      { label: 'Terms of Service', url: '/terms' },
     ],
     socialLinks: [
-      { label: 'Facebook', url: 'https://facebook.com' },
-      { label: 'Twitter', url: 'https://twitter.com' },
-      { label: 'LinkedIn', url: 'https://linkedin.com' },
-      { label: 'GitHub', url: 'https://github.com' },
-      { label: 'Instagram', url: 'https://instagram.com' },
+      { label: 'Facebook', url: "#" },
+      { label: 'Twitter', url: "#" },
+      { label: 'LinkedIn', url: "#" },
+      // { label: 'GitHub', url: 'https://github.com' },
+      { label: 'Instagram', url: "#" },
     ],
     logo: {
       src: '/logo.svg',

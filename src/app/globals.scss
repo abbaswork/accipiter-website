@@ -4,6 +4,17 @@
 
 body.page-body {
   @include page-grid();
+  font-family: "Work Sans", sans-serif;
   background: black;
   padding-top: 4rem;
+}
+
+.section {
+  @include component-grid();
+  justify-items: center;
+  padding-top: 4rem;
+
+  @include breakpoint(desktop-small){
+    padding-top: 9rem;
+  }
 }

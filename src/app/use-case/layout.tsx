@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import styles from "./layout.module.scss";
 import "@/app/globals.scss";
 import { SnapshotCard } from "@/stories/components/cards/snapshot-card/Index";
@@ -35,26 +34,6 @@ export const metadata: Metadata = {
   description: "Headless, AI, AWS Case studies and more",
 };
 
-const footerArgs = {
-  links: [
-    { label: "Contact Us", url: "/contact" },
-    { label: "Privacy Policy", url: "/privacy" },
-    { label: "Terms of Service", url: "/terms" },
-  ],
-  socialLinks: [
-    { label: "Facebook", url: "https://facebook.com" },
-    { label: "Twitter", url: "https://twitter.com" },
-    { label: "LinkedIn", url: "https://linkedin.com" },
-    { label: "GitHub", url: "https://github.com" },
-    { label: "Instagram", url: "https://instagram.com" },
-  ],
-  logo: {
-    src: "/logo.svg",
-    alt: "Logo",
-  },
-  copyright: `© ${new Date().getFullYear()} Accipiter Tech Consulting. All rights
-        reserved.`,
-};
 
 export default function RootLayout({
   children,

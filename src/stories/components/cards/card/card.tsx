@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styles from "./card.module.scss";
+import React from "react";
+import styles from "./style.module.scss";
 
 //creating Props for Card
 export interface CardProps
@@ -22,15 +22,13 @@ export const Card = ({ cardType, headerText, subHeaderText }: CardProps) => {
   }
 
   return (
-    <>
-      <div className={`${styles.cardTemplate} ${cardClass}`}>
-        <div className={styles.cardContainer}>
-          <h2 className={styles.cardHeader}>
-            <strong>{headerText}</strong>
-          </h2>
-          <a>{subHeaderText}</a>
-        </div>
+    <div className={`${styles.cardTemplate} ${cardClass}`}>
+      <div className={styles.cardContainer}>
+        <h2 className={styles.cardHeader}>
+          <strong>{headerText}</strong>
+        </h2>
+        <a>{subHeaderText}</a>
       </div>
-    </>
+    </div>
   );
 };

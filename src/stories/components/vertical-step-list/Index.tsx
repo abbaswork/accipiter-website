@@ -1,56 +1,43 @@
-import React from 'react';
-import styles  from './style.module.scss';
+import React from "react";
+import styles from "./style.module.scss";
 
-export interface ButtonProps {
+export interface VerticalStepListProps {
+  sectionTitle?: string;
+  steps: {
+    headerText: string;
+    subheaderText: string;
+  }[];
   onClick?: () => void;
+  style?:  React.CSSProperties;
 }
 
-
-
 export const VerticalStepList = ({
-  
-}) => {
-  
-let x = [   {
-    headerText: 'Precision Integration',
-    subheaderText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  },
-    {
-    headerText: 'Seamless Collaboration',
-    subheaderText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  },
-  {
-    headerText: 'Future Thinking',
-    subheaderText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  },
-  {
-    headerText: 'Agile Approach',
-    subheaderText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  }
-]
-
+  steps,
+  sectionTitle,
+  style
+}: VerticalStepListProps) => {
   return (
-    <>
-      <div className={styles['vertical-step-list-container']} >
-{x.map((step, index) => (
-    <div className={styles['timeline-container']} key={index}>
-      <div className={styles['circle']}>
-        {index + 1}
-      </div>
-      <div>
-        <div className={styles['vertical-step-list-header']}>
-          <b>
-            {step.headerText}
-          </b>
-          <div className={styles['vertical-step-list-header-subtitle']}>
-            <a>
-              {step.subheaderText}
-            </a>
+    <div className="section" style={style}>
+      {sectionTitle && <h2 className="section-header">{sectionTitle}</h2>}
+      <div className={styles["vertical-step-list-container"]}>
+        {steps.map((step, index) => (
+          <div
+            className={styles["timeline-container"]}
+            key={index}
+            style={index === (steps.length - 1) ? { padding: 0 } : {}}
+          >
+            <div className={styles["circle"]}>{index + 1}</div>
+            <div>
+              <div className={styles["vertical-step-list-header"]}>
+                <b>{step.headerText}</b>
+                <div className={styles["vertical-step-list-header-subtitle"]}>
+                  <a className={styles["subheader-text"]}>{step.subheaderText}</a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-      </div>
-))}
-</div>
-</>
-)}
+    </div>
+  );
+};

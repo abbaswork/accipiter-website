@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./style.scss";
 import Image from "next/image";
 import { FormFields, FormProps } from "./Index";
@@ -12,17 +12,18 @@ export const Form = ({
   const [visible, setVisible] = React.useState<boolean>(false);
   const [services, setServices] = React.useState<string>("");
   const formFields = [
-    { label: "First Name", type: "text", maxlength: 10, name: "firstname" },
-    { label: "Website", type: "text", maxlength: 10, name: "website" },
+    { label: "Name", type: "text", maxlength: 50, name: "firstname" },
+    { label: "Website", type: "text", maxlength: 100, name: "website" },
     { label: "Email", type: "email", maxlength: 100, name: "email" },
   ];
+
   const formSelectableFields = [
-    { label: "Sample 1", type: "text" },
-    { label: "Sample 2", type: "text" },
-    { label: "Sample 3", type: "text" },
-    { label: "Sample 4", type: "text" },
-    { label: "Sample 5", type: "text" },
+    { label: "Headless Migration", type: "text" },
+    { label: "Microservices", type: "text" },
+    { label: "AI Automation", type: "text" },
+    { label: "Other", type: "text" },
   ];
+
   let visibleOrHiddden = "form-hidden";
 
   if (visible) {
@@ -30,8 +31,6 @@ export const Form = ({
   } else {
     visibleOrHiddden = "form-hidden";
   }
-
-  let service = "";
 
   const handleService = (e: React.MouseEvent<HTMLAnchorElement>): void => {
     setServices(e.currentTarget.textContent || "");
@@ -50,8 +49,8 @@ export const Form = ({
       {/* The Three Input Fields */}
 
       <div className={"form-content"}>
-        {formFields.map((item) => (
-          <div className={"form-item"}>
+        {formFields.map((item, index) => (
+          <div key={"field-" + index} className={"form-item"}>
             <label className={`${"form-label"}  ${"gradient-text"}`}>
               {item.label}
             </label>
@@ -95,28 +94,29 @@ export const Form = ({
             <a>{services}</a>
           </div>
           <div className={"form-select-container " + visibleOrHiddden}>
-            {formSelectableFields.map((item) => (
-              <a className={"form-select"} onClick={handleService}>
+            {formSelectableFields.map((item, index) => (
+              <a
+                key={"select-" + index}
+                className={"form-select"}
+                onClick={handleService}
+              >
                 {" "}
                 {item.label}
               </a>
             ))}
-
           </div>
 
           {/* Message Input */}
         </div>
       </div>
-      <form className={"form-message-item"}>
-        <label className={`$ {'form-label'}  ${"gradient-text"}`}>
-          Message
-        </label>
+      <div className={"form-message-item"}>
+        <label className="form-label gradient-text">Message</label>
         <textarea
           name="message"
           onChange={onChange}
-          className={`$'{form-textarea'} ${"form-input"}`}
+          className='form-textarea form-input'
         />
-      </form>
+      </div>
       <div className={"form-button-container"}>
         <button className={"form-button"} type="submit">
           Submit

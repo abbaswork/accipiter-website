@@ -1,54 +1,49 @@
+.header-text {
+  justify-content: center;
+  font-size: 24px;
+  margin: 3rem 2rem;
+  width: fit-content;
+  justify-content: center;
+  text-align: center;
 
-
-
-      .header-text {
-         justify-content: center;
-         font-size: 24px;
-         margin: 3rem 2rem;
-         width: fit-content;
-         justify-content: center;
-         text-align: center;
-      }
-      
-      .sub-text {
-         font-size: 18px;
-         display: flex;
-         flex-direction: column;
-         position: relative;
-         position: absolute;
-         bottom: 2.8rem;
-         left: 1rem;
-      }
-      
-      .author-text {
-         font-size: 14px;
-         color: gray;
-         display: flex;
-         position: relative;
-         position: absolute;
-         bottom: 20px;
-         left: 1rem;
-      }
-      
-      b {
-  font-weight: 400;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-   background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+  b {
+    font-weight: 400;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
+.sub-text {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  position: absolute;
+  bottom: 2.8rem;
+  left: 1rem;
+}
+
+.author-text {
+  font-size: 14px;
+  color: gray;
+  display: flex;
+  position: relative;
+  position: absolute;
+  bottom: 20px;
+  left: 1rem;
+}
 
 .carouselContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: auto;
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100vw;
+  // margin: 0 auto;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .card {
@@ -56,7 +51,8 @@
   flex-direction: column;
   font-family: sans-serif;
   grid-column: span 4;
-  width: 277.4px;
+  min-width: 277.4px;
+  max-width: 277.4px;
   height: 257.69px;
   color: white;
   border: 2px solid transparent;
@@ -100,7 +96,7 @@
 
 /* Animating transitions: left -> out, center -> left, right -> center */
 
-.animatingClass > .leftCard {
+.animatingClass>.leftCard {
   transform: translateX(-50%);
   opacity: 0.5;
 }
@@ -110,15 +106,16 @@
   color: red;
 }
 
-@keyframes move{
+@keyframes move {
   0% {
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(50%) translateY(50%);
   }
+
   100% {
     transform: translateX(-110%) translateY(-100%);
   }
 }
-

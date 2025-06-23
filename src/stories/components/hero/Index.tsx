@@ -9,6 +9,7 @@ export interface HeroProps {
   logoBarImage?: string;
   logoSectionTitle?: string;
   cta?: { label: string; href: string };
+  style?: React.CSSProperties;
 }
 
 export const Hero = ({
@@ -17,9 +18,10 @@ export const Hero = ({
   subtitle,
   logoSectionTitle,
   cta,
+  style,
 }: HeroProps) => {
   return (
-    <div className={styles["hero-section"]}>
+    <div className={styles["hero-section"]} style={style}>
       <h1
         className={styles["hero-title"]}
         dangerouslySetInnerHTML={{ __html: title }}
@@ -29,22 +31,24 @@ export const Hero = ({
 
       {cta && <PrimaryCTA link={cta.href} label={cta.label} />}
 
-      <div className={styles["logo-section"]}>
-        {logoSectionTitle && (
-          <h3 className={styles["logo-section-title"]}>{logoSectionTitle}</h3>
-        )}
-        {logoBarImage && (
-          <Image
-            className={styles["logo-bar"]}
-            src={logoBarImage}
-            alt="Logo bar"
-            width={488}
-            height={0}
-            style={{ height: "auto" }}
-            priority
-          />
-        )}
-      </div>
+      {logoBarImage && (
+        <div className={styles["logo-section"]}>
+          {logoSectionTitle && (
+            <h3 className={styles["logo-section-title"]}>{logoSectionTitle}</h3>
+          )}
+          {logoBarImage && (
+            <Image
+              className={styles["logo-bar"]}
+              src={logoBarImage}
+              alt="Logo bar"
+              width={580}
+              height={0}
+              style={{ height: "auto", maxWidth: "100vw" }}
+              priority
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 };
