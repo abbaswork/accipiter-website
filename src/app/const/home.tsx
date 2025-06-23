@@ -1,7 +1,7 @@
 import { CardRowProps } from "@/stories/components/cards/card/Index";
 
 export const HeroArgs = {
-  title: "Legacy <span>Reimagined</span>,\nFuture-Proofed",
+  title: "Legacy <span>Reimagined</span>,<br>Future-Proofed",
   subtitle:
     "Seamless headless migrations, AI-optimized ecosystems, and enterprise resilience. ",
   logoSectionTitle: "Our Tech Stack",
@@ -93,7 +93,7 @@ export const ourUseCasesArgs = {
 };
 
 export const ourCaseStudiesArgs: CardRowProps = {
-  sectionTitle: "Case Studies",
+  sectionTitle: "Case Studies - Coming Soon",
   cards: [
     {
       headerText: "Metric Gamer",

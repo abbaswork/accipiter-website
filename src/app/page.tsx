@@ -15,9 +15,9 @@ export default function Home() {
   return (
     <>
       <Hero {...HeroArgs} />
-      <VerticalStepList {...ourApproachArgs} style={{paddingTop: "0rem"}}/>
-      <Carousel {...ourTestimonialsArgs} />
       <ReactiveCard {...ourUseCasesArgs} />
+      <VerticalStepList {...ourApproachArgs} style={{ paddingTop: "0rem" }} />
+      <Carousel {...ourTestimonialsArgs} />
       <CardRow {...ourCaseStudiesArgs} />
     </>
   );
