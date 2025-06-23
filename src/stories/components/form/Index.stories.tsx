@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { HubSpotForm } from './Index'; // Make sure this path is correct
 import './../../../styles/pages/global.scss';
-import { JSX } from 'react';
 
 const meta = {
   title: 'Components/Form',
