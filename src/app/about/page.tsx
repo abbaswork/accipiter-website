@@ -10,7 +10,7 @@ const HeroArgs = {
   },
 };
 
-export const ourApproachArgs = {
+const ourApproachArgs = {
   // sectionTitle: "Our Approach",
   steps: [
     {
