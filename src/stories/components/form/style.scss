@@ -11,6 +11,7 @@
    justify-self: center;
    padding: 0rem;
    padding-top: 2rem;
+   padding-bottom: 2rem;
    gap: 15px;
    color: white;
 
@@ -262,4 +263,19 @@ i {
    100% {
       background-position: 0% 50%;
    }
+}
+
+.form-modal {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: #222;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  font-size: 1.1rem;
+  text-align: center;
 }

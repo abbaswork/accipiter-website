@@ -18,7 +18,7 @@ export default function Home() {
       <VerticalStepList {...ourApproachArgs} style={{ paddingTop: "0rem" }} />
       <ReactiveCard {...ourUseCasesArgs} />
       <Carousel {...ourTestimonialsArgs} className="split"/>
-      <CardRow {...ourCaseStudiesArgs} className="split"/>
+      <CardRow {...ourCaseStudiesArgs} className="split" style={{ paddingTop: "5rem" }}/>
     </>
   );
 }

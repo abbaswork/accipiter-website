@@ -11,12 +11,13 @@ export interface CardRowProps {
     cardType: "Syrian Foundation" | "Metric Gamer";
   }[];
   className?: string;
+  style?: React.CSSProperties;
 }
 
 /** Primary UI component for user interaction */
-export const CardRow = ({ cards, sectionTitle, className }: CardRowProps) => {
+export const CardRow = ({ cards, sectionTitle, className, style }: CardRowProps) => {
   return (
-    <div className={"section " + className}>
+    <div className={"section " + className} style={style}>
       {sectionTitle && <h2 className="section-header">{sectionTitle}</h2>}
       <div className={styles["card-row"]}>
         {cards.map((card, index) => (

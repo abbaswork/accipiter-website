@@ -21,6 +21,7 @@ export interface FormProps {
     >
   ) => void;
   formMessage?: string;
+  setFormMessage: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const HubSpotForm = ({ style }: { style?: React.CSSProperties }) => {
@@ -53,7 +54,7 @@ export const HubSpotForm = ({ style }: { style?: React.CSSProperties }) => {
       fields.services === ""
     ) {
       console.log("Please fill all fields");
-      setFormMessage("Please fill all fields.");
+      setFormMessage("Please ensure all fields are filled out.");
       throw Error("Please fill all fields");
     }
 
@@ -130,6 +131,7 @@ export const HubSpotForm = ({ style }: { style?: React.CSSProperties }) => {
         onChange={handleChange}
         formData={formData}
         formMessage={formMessage}
+        setFormMessage={setFormMessage}
       />
     </div>
   );
