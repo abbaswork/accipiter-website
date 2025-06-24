@@ -77,7 +77,7 @@ export const ourUseCasesArgs = {
     },
     {
       headerText: "AI Integration",
-      progress: 3,
+      progress: 1,
       metric: "Faster Content Generation",
       content:
         "Supercharge your business with AI automation. Generate high-quality content up to 3x faster than traditional methods. Instantly scale your output, react to market trends in real time, and keep your brand ahead with rapid, consistent publishing.",

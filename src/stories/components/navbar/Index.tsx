@@ -35,7 +35,7 @@ export const Navbar = ({ links, cta }: NavbarProps) => {
     <div className={"navbar"}>
       <div className={"navbar-container"}>
         <NavbarLogo />
-        <div className={`navbar-items ${mobileDisplayClass}`}>
+        <div className={`navbar-items ${mobileDisplayClass}`} onClick={() => setMobileDisplay(false)}>
           {links?.map((item, index) => (
             <Link key={index} href={item.url} className={"navbar-item"}>
               {item.label}
