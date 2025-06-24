@@ -58,10 +58,10 @@
 
 .cardInteractiveHeader {
    border: 2px solid transparent;
-   height: 30px;
+   min-height: 2rem;
    font-size: 1.5rem;
    border-radius: 20px;
-   max-height: 2rem;
+   // max-height: 2rem;
    background:
       linear-gradient(#12171D, #12171D) padding-box,
       linear-gradient(-45deg, #f8772d, #ffbc88, #C66831, #feb47b);
@@ -83,7 +83,7 @@
    text-align: center;
    margin: auto;
    cursor: pointer;
-   padding: 0 1rem;
+   padding: .35rem 1rem;
 }
 
 .cardInteractiveHeaderTabs {
