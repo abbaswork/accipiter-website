@@ -10,7 +10,7 @@ const HeroArgs = {
 export default function Contact() {
   return (
     <>
-      <Hero {...HeroArgs} style={{height: "30vh"}} />
+      <Hero {...HeroArgs} style={{height: "40vh"}} />
        <HubSpotForm/>
     </>
   );
