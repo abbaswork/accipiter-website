@@ -1,124 +1,136 @@
+.header-text {
+  justify-content: center; /* This only applies to flex/grid items */
+  font-size: clamp(1.25rem, 1.5rem, 1.5rem);
+  margin: 1rem 28px 3rem 28px;
+  width: fit-content; /* This implies it should be block level, not flex */
+  text-align: center;
+  /* If this is a block element, justify-content won't center its content.
+     Use margin: 0 auto; if it's display: block and has a width. */
 
-
-
-      .header-text {
-         justify-content: center;
-         font-size: 24px;
-         margin: 3rem 2rem;
-         width: fit-content;
-         justify-content: center;
-         text-align: center;
-      }
-      
-      .sub-text {
-         font-size: 18px;
-         display: flex;
-         flex-direction: column;
-         position: relative;
-         position: absolute;
-         bottom: 2.8rem;
-         left: 1rem;
-      }
-      
-      .author-text {
-         font-size: 14px;
-         color: gray;
-         display: flex;
-         position: relative;
-         position: absolute;
-         bottom: 20px;
-         left: 1rem;
-      }
-      
-      b {
-  font-weight: 400;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-   background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+     @media screen and (min-width: 768px) {
+      margin: 3rem 28px;
+     }
 }
 
+.sub-text {
+  font-size: 18px;
+  display: flex; /* This is fine */
+  flex-direction: column;
+  position: absolute; /* Last one wins */
+  bottom: 2.8rem;
+  left: 1rem;
+}
 
+.author-text {
+  font-size: 14px;
+  color: gray;
+  display: flex; /* This is fine */
+  position: absolute; /* Last one wins */
+  bottom: 20px;
+  left: 1rem;
+}
+ 
+/* Base styles for the main carousel container */
 .carouselContainer {
-  display: flex;
-  justify-content: center;
+  display: flex; /* Still useful for horizontal alignment of the container itself */
   align-items: center;
-  gap: 20px;
-  width: auto;
-  max-width: 900px;
   margin: 0 auto;
-  position: relative;
-  overflow: hidden;
+  position: relative; /* All cards are absolute within this */
+  max-width: 1000px; /* Limits overall width on large screens */
+  min-width: 320px; /* Ensures it doesn't shrink too much on very small screens */
+  height: 300px; /* Fixed height for the carousel area */
+  box-sizing: border-box;
+  overflow: hidden; 
+  @media screen and (min-width: 1024px) {
+    overflow: visible;
+  }
 }
 
+/* Base styles for all cards */
 .card {
+  min-width: 250px;
+  max-width: 300px;
+  position: absolute; /* All cards positioned relative to .carouselContainer */
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
-  grid-column: span 4;
-  width: 277.4px;
-  height: 257.69px;
   color: white;
   border: 2px solid transparent;
   border-radius: 20px;
-}
+  /* Default transition for all cards */
+  transition: transform 2s ease, opacity 2s ease, z-index 2s ease;
 
-/* Positions */
-.leftCard {
-  transform: translateX(0%) scale(0.95);
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 1;
-  background:
-    linear-gradient(#12171D, #12171D) padding-box,
-    linear-gradient(to bottom right, #F6CA56, #C2581B) border-box;
+  /* Example: Add a class for cards that should be transparent while transitioning *}
+  box-sizing: border-box; /* Ensures padding/border are included in width/height */
+  pointer-events: none; /* By default, cards are not interactable unless active */
+  opacity: 0.5; 
+  z-index: 1; 
+
+@media screen and (min-width: 1024px) {
+    opacity: 1;
+    transform: scale(0.85);
+}
 }
 
 .centerCard {
-  transform: translateX(0) scale(1);
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 3;
+  height: 287px; /* Keep consistent height */
+  transform: translate(-50%, -50%) scale(1); /* Ensure it's perfectly centered and full scale */
+  opacity: 1; 
+  pointer-events: auto; /* Interactable */
+  z-index: 3; /* On top */
+  /* Backgrounds specific to center card */
   background:
-    url(./bottomBackground.svg) bottom right / cover no-repeat,
-    url(./upperBackground.svg) top left / cover no-repeat,
+    url(./bottomBackground.svg) bottom right / 50% no-repeat, /* Adjusted background-size */
+    url(./upperBackground.svg) top left / 50% no-repeat,
     linear-gradient(#12171D, #12171D) padding-box,
     linear-gradient(to bottom right, #C2581B, #F6CA58) border-box;
-  background-size: 50%;
-  height: 287px;
+  background-clip: padding-box, border-box, padding-box, border-box;
+  background-origin: padding-box, padding-box, padding-box, border-box;
+
+  @media screen and (min-width: 1024px) {
+    transform: translateX(0%) scale(1);
+  z-index: 1;
+}
 }
 
-.rightCard {
-  transform: translateX(10%) scale(0.95);
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 2;
+/* Left Card (Mobile: Peeks from left) */
+.leftCard {
+  height: 287px; /* Smaller height for side cards */
+  transform: translate(0%, -50%);
   background:
     linear-gradient(#12171D, #12171D) padding-box,
-    linear-gradient(to bottom left, #F6CA56, #C2581B) border-box;
-}
+    linear-gradient(to bottom right, #F6CA56, #C2581B) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  z-index: 1;
 
-/* Animating transitions: left -> out, center -> left, right -> center */
-
-.animatingClass > .leftCard {
-  transform: translateX(-50%);
-  opacity: 0.5;
-}
-
-
-.animatingClass {
-  color: red;
-}
-
-@keyframes move{
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(50%) translateY(50%);
-  }
-  100% {
-    transform: translateX(-110%) translateY(-100%);
+  @media screen and (min-width: 1024px) {
+ transform: translateX(-100%) scale(0.8);  /* Slide fully left but still visible */
   }
 }
 
+/* Right Card (Mobile: Peeks from right) */
+.rightCard {
+  height: 287px;
+  transform: translate(calc(-50% + 90vw - 20px), -50%); /* Move right, scale down */
+  background:
+    linear-gradient(#12171D, #12171D) padding-box,
+    linear-gradient(to bottom right, #F6CA56, #C2581B) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  z-index: 1;
+    @media screen and (min-width: 1024px) {
+  transform: translate(110%, 0%) scale(0.8);
+  opacity: 1;
+  z-index: 2;
+  }}
+
+  .hiddenLeft {
+    transform: translate(-200%, 0%);
+    opacity: 0;
+  }
+
+  .hiddenRight {
+    transform: translate(200%, 0%);
+    opacity: 0;
+  }
