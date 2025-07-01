@@ -65,11 +65,19 @@
   pointer-events: none; /* By default, cards are not interactable unless active */
   opacity: 0.5; 
   z-index: 1; 
+  transform: scale(0.85);
 
 @media screen and (min-width: 1024px) {
     opacity: 1;
-    transform: scale(0.85);
 }
+}
+
+
+b {
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 
 .centerCard {
@@ -86,16 +94,16 @@
     linear-gradient(to bottom right, #C2581B, #F6CA58) border-box;
   background-clip: padding-box, border-box, padding-box, border-box;
   background-origin: padding-box, padding-box, padding-box, border-box;
+  transform: translateX(0%) scale(1);
 
   @media screen and (min-width: 1024px) {
-    transform: translateX(0%) scale(1);
   z-index: 1;
 }
 }
 
 /* Left Card (Mobile: Peeks from left) */
 .leftCard {
-  height: 287px; /* Smaller height for side cards */
+  height: 250px; /* Smaller height for side cards */
   transform: translate(0%, -50%);
   background:
     linear-gradient(#12171D, #12171D) padding-box,
@@ -103,26 +111,24 @@
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
   z-index: 1;
+  transform: translateX(-100%) scale(0.8);  /* Slide fully left but still visible */
 
   @media screen and (min-width: 1024px) {
- transform: translateX(-100%) scale(0.8);  /* Slide fully left but still visible */
   }
 }
 
 /* Right Card (Mobile: Peeks from right) */
 .rightCard {
-  height: 287px;
-  transform: translate(calc(-50% + 90vw - 20px), -50%); /* Move right, scale down */
+  height: 250px;
+  transform: translate(110%, 0%) scale(0.8);
   background:
     linear-gradient(#12171D, #12171D) padding-box,
     linear-gradient(to bottom right, #F6CA56, #C2581B) border-box;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  z-index: 1;
-    @media screen and (min-width: 1024px) {
-  transform: translate(110%, 0%) scale(0.8);
-  opacity: 1;
   z-index: 2;
+    @media screen and (min-width: 1024px) {
+  opacity: 1;
   }}
 
   .hiddenLeft {
