@@ -8,7 +8,7 @@ export const HeroArgs = {
   logoBarImage: "/logo-bar.svg",
   cta: {
     label: "Book a Consultation",
-    href: "https://example.com/get-started",
+    href: "/contact",
   },
 };
 

@@ -6,7 +6,7 @@ const HeroArgs = {
   subtitle: "Learn more about our expertise and services.",
   cta: {
     label: "Book a Consultation",
-    href: "https://example.com/get-started",
+    href: "/contact",
   },
 };
 

@@ -6,7 +6,7 @@ const HeroArgs = {
     "We are just launching and will be adding more information about our services and expertise soon. Stay tuned!",
   cta: {
     label: "Book a Consultation",
-    href: "https://example.com/get-started",
+    href: "/contact",
   },
 };
 
